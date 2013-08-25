@@ -290,3 +290,73 @@ section h1 {
 	#projectdetail { display: none; }
 
 footer {}
+
+/* donut */
+@mixin prefix($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+}
+html {}
+#donut {
+	width: 100%;
+	height: 300px;
+	// background-color: black;
+
+	$wideness: 8em;
+	$thickness: 3em;
+	$circles: 28;
+	$sides: 14;
+
+	@include prefix(perspective, 100em);
+	@include prefix(perspective-origin, 50% -0%);
+	@include prefix(animation, #{swingx 15s ease-in-out infinite,
+    roty 30s linear infinite});
+	@include prefix(transform-style, preserve-3d);
+	@include prefix(transform, rotateX(35deg));
+
+  * {
+		@include prefix(transform-style, preserve-3d);
+  	@include prefix(backface-visibility, hidden);
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	}
+
+	@for $i from 0 through $circles {
+	  .circle:nth-child(#{$i}) {
+			@include prefix(transform, #{rotateY($i / $circles * 360deg) translateZ($wideness)});
+	  }
+	}
+  .rotor {
+		@include prefix(animation, rotx 15s linear 0s infinite);
+  }
+
+	@for $i from 0 through $sides {
+		.dot:nth-child(#{$i}) {
+  		@include prefix(transform, rotateX($i / $sides * 360deg) translateZ($thickness));
+		}
+	}
+
+  .dot {
+  	// @include prefix(animation, roty 15s linear 0s infinite);
+  	background-color: white;
+  	width: 0.4em;
+  	height: 0.4em;
+		border-radius: 50%;
+  }
+}
+
+@-webkit-keyframes rotx {
+  to { @include prefix(transform, rotateX(360deg)); }
+}
+
+@-webkit-keyframes swingx {
+  0% { @include prefix(transform, rotateX(-35deg)); }
+  50% { @include prefix(transform, rotateX(35deg)); }
+  to { @include prefix(transform, rotateX(-35deg)); }
+}
+
+@-webkit-keyframes roty {
+  to { @include prefix(transform, rotateY(360deg)); }
+}

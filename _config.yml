@@ -1,0 +1,7 @@
+name: chillidonut
+pygments: true
+
+# sass
+sass:
+  syntax: scss        # scss|sass
+  style:  nested  # nested|expanded|compact|compressed
