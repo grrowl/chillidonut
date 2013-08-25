@@ -1,11 +1,14 @@
+//
+// extend Zepto with various functions
+//
 ;(function($) {
-	var interpolate = function (source, target, shift) { 
-		return (source + (target - source) * shift); 
+	var interpolate = function (source, target, shift) {
+		return (source + (target - source) * shift);
 	};
 
-	var easing = function (pos) { 
+	var easing = function (pos) {
 	    // return (-Math.cos(pos * Math.PI) / 2) + .5;
-	    
+
 	    // taken from jQuery easing easeInOutQuad
 	    var t = pos, b = 0, c= 1, d= 1;
 	    if ((t/=d/2) < 1) return c/2*t*t + b;
@@ -29,20 +32,14 @@
 
 			(now > finishT) || setTimeout(animate, 15);
 		};
-	
+
 		animate();
 	};
 }(Zepto));
 
-
-
-
-
-
-
-
-
-
+//
+// update scroll position on click
+//
 $(function () {
 	var scrollPos = { prev: 0, active: 0, offset: 100 },
 		ITEM_SIZE = { width: 320, height: 400 };
@@ -51,7 +48,7 @@ $(function () {
 	var cols;
 	var positionItems = function () {
 		// explicit positioning
-		
+
 		$('li', '#projectlist').each(function (i, elem) {
 			var $this = $(this),
 				index = $this.index(),
@@ -80,7 +77,7 @@ $(function () {
 		if (list.hasClass('modal-active')) {
 			// reset all
 			var active = items.filter('.active');
-			if (active.length) { 
+			if (active.length) {
 				if (active.index() % cols == 0) activeDelta = 0;
 				if ((active.index()) + 1 % cols == 0) nextRowDelta = 0;
 
@@ -102,10 +99,10 @@ $(function () {
 		} else {
 			// make this item active
 			var self = $(this).addClass('active');
-			
+
 			if (self.index() % cols == 0) activeDelta = 0;
 			if ((self.index() + 1) % cols == 0) nextRowDelta = 0;
-			
+
 			self.css('top', parseInt(self.css('top')) + activeDelta);
 			self.css('left', self.parent('ul').width()/2 - 960/2);
 
@@ -122,11 +119,42 @@ $(function () {
 			});
 			list.addClass('modal-active');
 		}
-	});	
+	});
 
 	// fancy.init();
 
 	setTimeout(function () {
 		$('#projects').addClass('animated');
 	}, 500);
+});
+
+//
+// background triangles
+//
+$(function () {
+	var baseOffset = { x: 18, y: 3 },
+			gridSize = { x: 188, y: 178 },
+			triangles = [
+				{ x: 146, y: 3 },
+				{ x: 146, y: 19 },
+				{ x: 52, y: 16 },
+				{ x: 71, y: 16 }
+			];
+
+	// every event,
+	// pick a visible tile grid spot
+	// pick a random triangle within that grid square
+	//  css:
+	//		position = baseOffset + triangleOffset
+	//		background-position = triangleOffset
+
+	setInterval(function () {
+		var grid = {
+			x: ~~(Math.random() * 6),
+			y: ~~(Math.random() * 3)
+		};
+
+
+
+	}, 1000);
 });
