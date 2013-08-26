@@ -304,16 +304,18 @@ html {}
 	// background-color: black;
 
 	$wideness: 8em;
-	$thickness: 3em;
+	$thickness: 3.5em;
 	$circles: 28;
 	$sides: 14;
 
 	@include prefix(perspective, 100em);
 	@include prefix(perspective-origin, 50% -0%);
-	@include prefix(animation, #{swingx 15s ease-in-out infinite,
-    roty 30s linear infinite});
 	@include prefix(transform-style, preserve-3d);
-	@include prefix(transform, rotateX(35deg));
+	@include prefix(animation, #{
+		swingx 15s ease-in-out infinite,
+		swingz 15s ease-in-out infinite,
+    roty 60s linear infinite
+  });
 
   * {
 		@include prefix(transform-style, preserve-3d);
@@ -328,6 +330,7 @@ html {}
 			@include prefix(transform, #{rotateY($i / $circles * 360deg) translateZ($wideness)});
 	  }
 	}
+	.circle {}
   .rotor {
 		@include prefix(animation, rotx 15s linear 0s infinite);
   }
@@ -341,9 +344,19 @@ html {}
   .dot {
   	// @include prefix(animation, roty 15s linear 0s infinite);
   	background-color: white;
-  	width: 0.4em;
-  	height: 0.4em;
+  	width: 0.6em;
+  	height: 0.6em;
 		border-radius: 50%;
+		border: 3px solid black;
+  }
+  .dot:nth-child(3n) {
+		opacity: 0.8;
+  }
+  .dot:nth-child(3n+1) {
+		opacity: 0.6;
+  }
+  .dot:nth-child(3n+2) {
+		opacity: 0.4;
   }
 }
 
@@ -353,8 +366,14 @@ html {}
 
 @-webkit-keyframes swingx {
   0% { @include prefix(transform, rotateX(-35deg)); }
-  50% { @include prefix(transform, rotateX(35deg)); }
+  50% { @include prefix(transform, rotateX(20deg)); }
   to { @include prefix(transform, rotateX(-35deg)); }
+}
+
+@-webkit-keyframes swingx {
+  0% { @include prefix(transform, rotateZ(-35deg)); }
+  50% { @include prefix(transform, rotateZ(20deg)); }
+  to { @include prefix(transform, rotateZ(-35deg)); }
 }
 
 @-webkit-keyframes roty {
