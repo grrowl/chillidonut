@@ -145,11 +145,6 @@ section h1 {
 	width: 300px;
 	height: 300px;
 	overflow: hidden;
-
-	img {
-		position: relative;
-		@include prefix(transition, all 0.5s ease 0s);
-	}
 }
 #projects ul li:hover .image {
 	height: 390px;
@@ -214,11 +209,33 @@ section h1 {
 	top: 357px;
 }
 #projects .image {
+	position: relative;
 	@include prefix(transition, #{width, height 0.5s ease 0s});
 
 	img {
-		position: relative;
-		@include prefix(transition, #{left, top 0.5s ease 0s});
+		position: absolute;
+		@include prefix(transition, #{left, top, width, height 0.5s ease 0s});
+	}
+
+	/* some kind of slideshow */
+	&.cycle {
+		img {
+			opacity: 0;
+			@include prefix(animation, fade-image 20s ease 0s alternate);
+		}
+		img:nth-child(1) {
+			// opacity: 1;
+			@include prefix(animation-delay, 4s);
+		}
+		img:nth-child(2) {
+			@include prefix(animation-delay, 8s);
+		}
+		img:nth-child(3) {
+			@include prefix(animation-delay, 12s);
+		}
+		img:nth-child(4) {
+			@include prefix(animation-delay, 16s);
+		}
 	}
 }
 	/* projects list */
@@ -235,7 +252,7 @@ section h1 {
 
 	#projects .domy {
 		img {
-			left: -59px;
+			left: -0px;
 			top: -1px;
 		}
 		&.active img {
@@ -266,19 +283,23 @@ section h1 {
 	}
 	#projects .saga {
 		img {
-			left: -41px;
+			left: -0px;
 			top: -0px;
+			width: auto;
+			// height: 550px;
+			height: 400px;
 		}
 		&.active img {
-			// left: -140px;
-			// top: -25px;
+			left: -150px;
+			top: -50px;
+			height: 360px;
 		}
 	}
 
 	/* non-opened projects */
 	#projects .modal-active li {
 		opacity: 0.5;
-		-webkit-transform: translateZ(-20px);
+		@include prefix(transform, translateZ(-20px));
 	}
 
 	/* opened project */
@@ -428,4 +449,12 @@ footer {}
 
 @-webkit-keyframes roty {
   to { @include prefix(transform, rotateY(-360deg)); }
+}
+
+@-webkit-keyframes fade-image {
+	0% { opacity: 0; }
+	5% { opacity: 1; }
+	20% { opacity: 1; }
+  45% { opacity: 0; }
+  100% { opacity: 0; }
 }
