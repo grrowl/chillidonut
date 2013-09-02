@@ -3,6 +3,12 @@ from <http://matthewlein.com/ceaser/>:
 	easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000)
 	- too much for the big effect, the "jump" is too sudden
 */
+@mixin prefix($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+}
+
 body {
 	margin: 0;
 	color: #dfe2e2;
@@ -37,12 +43,20 @@ header {
 	}
 
 	header h1 {
+		text-indent: 50px;
 		/*width: 960px;*/
 		/*height: 190px;*/
 		/*margin: 0px auto;*/
 		/*border-bottom: 1px solid #dfe2e2;*/
 		/*line-height: 190px;*/
 		/*text-align: center;*/
+	}
+	header #donut {
+		position: absolute;
+		top: 43px;
+		left: -5px;
+		width: 40px;
+		height: 40px;
 	}
 	header canvas {
 		position: absolute;
@@ -118,7 +132,7 @@ section h1 {
 	overflow: hidden;
 }
 #projects.animated ul li {
-	-webkit-transition: all 0.5s ease 0s;
+	@include prefix(transition, all 0.5s ease 0s);
 	/*-webkit-transition: top, left, width, height 0.5s ease 0s;*/
 }
 #projects ul li:nth-child(3n) {
@@ -132,7 +146,10 @@ section h1 {
 	height: 300px;
 	overflow: hidden;
 
-	-webkit-transition: all 0.5s ease 0s;
+	img {
+		position: relative;
+		@include prefix(transition, all 0.5s ease 0s);
+	}
 }
 #projects ul li:hover .image {
 	height: 390px;
@@ -156,7 +173,7 @@ section h1 {
 	line-height: 150%;
 	background-color: black;
 	z-index: 2;
-	-webkit-transition: left 0.5s ease 0s;
+	@include prefix(transition, left 0.5s ease 0s);
 	padding: 0px 2px;
 }
 #projects li:hover h2, #projects li:hover h3, #projects li:hover .opentext {
@@ -191,31 +208,71 @@ section h1 {
 #projects .opentext {
 	z-index: 1;
 	top: 300px;
-	-webkit-transition: all 0.5s ease 0s;
+	@include prefix(transition, all 0.5s ease 0s);
 }
 #projects li:hover .opentext {
 	top: 357px;
 }
-	/* projects list */
-	#projects .mario {}
-	#projects .mario .image {
-		background: url('../images/projects/mario.jpg') -200px -25px;
+#projects .image {
+	@include prefix(transition, #{width, height 0.5s ease 0s});
+
+	img {
+		position: relative;
+		@include prefix(transition, #{left, top 0.5s ease 0s});
 	}
-	#projects .mario.active .image {
-		background-position: -140px -25px;
+}
+	/* projects list */
+	#projects .mario {
+		img {
+			left: -200px;
+			top: -25px;
+		}
+		&.active img {
+			left: -140px;
+			top: -25px;
+		}
 	}
 
-	#projects .domy {}
-	#projects .domy .image {
-		background: url('../images/projects/domy.jpg') -59px -1px;
+	#projects .domy {
+		img {
+			left: -59px;
+			top: -1px;
+		}
+		&.active img {
+			// left: -140px;
+			// top: -25px;
+		}
 	}
-	#projects .maxs {}
-	#projects .maxs .image {
-		background: url('../images/projects/maxs.jpg') -206px 0px;
+
+	#projects .maxs {
+		img {
+			left: -206px;
+			top: 0px;
+		}
+		&.active img {
+			left: -210px;
+			top: 0px;
+		}
 	}
-	#projects .zelda {}
-	#projects .zelda .image {
-		background: url('../images/projects/zelda.jpg') -41px 0px;
+	#projects .zelda {
+		img {
+			left: -41px;
+			top: -0px;
+		}
+		&.active img {
+			left: -65px;
+			top: -0px;
+		}
+	}
+	#projects .saga {
+		img {
+			left: -41px;
+			top: -0px;
+		}
+		&.active img {
+			// left: -140px;
+			// top: -25px;
+		}
 	}
 
 	/* non-opened projects */
@@ -292,19 +349,13 @@ section h1 {
 footer {}
 
 /* donut */
-@mixin prefix($name, $argument) {
-  #{$name}: $argument;
-  -webkit-#{$name}: $argument;
-  -moz-#{$name}: $argument;
-}
-html {}
 #donut {
-	width: 100%;
-	height: 300px;
+	// width: 100%;
+	// height: 300px;
 	// background-color: black;
 
-	$wideness: 8em;
-	$thickness: 3.5em;
+	$wideness: 1em;
+	$thickness: 0.65em;
 	$circles: 28;
 	$sides: 14;
 
@@ -313,7 +364,6 @@ html {}
 	@include prefix(transform-style, preserve-3d);
 	@include prefix(animation, #{
 		swingx 15s ease-in-out infinite,
-		swingz 15s ease-in-out infinite,
     roty 60s linear infinite
   });
 
@@ -344,10 +394,10 @@ html {}
   .dot {
   	// @include prefix(animation, roty 15s linear 0s infinite);
   	background-color: white;
-  	width: 0.6em;
-  	height: 0.6em;
+  	width: 0.25em;
+  	height: 0.25em;
 		border-radius: 50%;
-		border: 3px solid black;
+		// border: 1px solid black;
   }
   .dot:nth-child(3n) {
 		opacity: 0.8;
@@ -365,17 +415,17 @@ html {}
 }
 
 @-webkit-keyframes swingx {
-  0% { @include prefix(transform, rotateX(-35deg)); }
-  50% { @include prefix(transform, rotateX(20deg)); }
-  to { @include prefix(transform, rotateX(-35deg)); }
+  0% { @include prefix(transform, rotateX(-50deg)); }
+  50% { @include prefix(transform, rotateX(-20deg)); }
+  100% { @include prefix(transform, rotateX(-50deg)); }
 }
 
-@-webkit-keyframes swingx {
-  0% { @include prefix(transform, rotateZ(-35deg)); }
-  50% { @include prefix(transform, rotateZ(20deg)); }
-  to { @include prefix(transform, rotateZ(-35deg)); }
+@-webkit-keyframes swingz {
+  0% { @include prefix(transform, rotateZ(-15deg)); }
+  50% { @include prefix(transform, rotateZ(15deg)); }
+  to { @include prefix(transform, rotateZ(-15deg)); }
 }
 
 @-webkit-keyframes roty {
-  to { @include prefix(transform, rotateY(360deg)); }
+  to { @include prefix(transform, rotateY(-360deg)); }
 }
