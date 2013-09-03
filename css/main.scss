@@ -213,7 +213,7 @@ section h1 {
 
 	img {
 		position: absolute;
-		@include prefix(transition, #{left, top, width, height 0.5s ease 0s});
+		@include prefix(transition, all 0.5s ease 0s);
 	}
 
 	/* some kind of slideshow */
@@ -224,7 +224,8 @@ section h1 {
 		}
 		img:nth-child(1) {
 			opacity: 1 !important;
-			@include prefix(animation-delay, 0s);
+			// @include prefix(animation-delay, 0s);
+			@include prefix(animation, none);
 		}
 		img:nth-child(2) {
 			@include prefix(animation-delay, 5s);
@@ -238,25 +239,65 @@ section h1 {
 	}
 }
 	/* projects list */
-	#projects .mario {
+	.mario {
 		img {
-			left: -200px;
-			top: -25px;
+			left: -190px;
+			top: 0px;
+			width: auto;
+			height: 390px;
 		}
 		&.active img {
-			left: -140px;
-			top: -25px;
+			left: -120px;
+			top: 0px;
+			height: 450px;
+		}
+
+		img:nth-child(1) {
+			left: -120px;
+			top: -15px;
+			height: 405px;
+		}
+		&.active img:nth-child(1) {
+			left: -50px;
+			top: -10px;
+		}
+
+		&.active img:nth-child(3) {
+			left: -300px;
+		}
+
+		img:nth-child(4) {
+			left: -91px;
+			top: -0px;
+			height: 400px;
+		}
+		&.active img:nth-child(4) {
+			left: -240px;
+			top: 0px;
 		}
 	}
 
 	#projects .domy {
 		img {
-			left: -0px;
+			left: 0px;
 			top: -1px;
+			width: auto;
+			height: 550px;
 		}
 		&.active img {
 			// left: -140px;
 			// top: -25px;
+			height: 400px;
+		}
+
+		&.active img:nth-child(1) {
+			// left: -330px;
+			// top: 0px;
+		}
+
+		&.active img:nth-child(3) {
+			// left: -240px;
+			// top: 0px;
 		}
 	}
 
@@ -282,16 +323,49 @@ section h1 {
 	}
 	#projects .saga {
 		img {
-			left: -0px;
-			top: -0px;
+			left: 0px;
+			top: -20px;
 			width: auto;
-			// height: 550px;
-			height: 400px;
+			height: 550px;
+			// height: 400px;
 		}
 		&.active img {
-			left: -150px;
-			top: -50px;
-			height: 360px;
+			height: 400px;
+		}
+
+
+
+		&.active img:nth-child(1) {
+			left: -220px;
+			top: -90px;
+			height: 500px;
+		}
+
+		&.active img:nth-child(2) {
+			left: -210px;
+			top: -20px;
+			height: 500px;
+		}
+
+		img:nth-child(3) {
+			left: -586px;
+			top: -150px;
+			height: 540px;
+		}
+		&.active img:nth-child(3) {
+			left: -235px;
+			top: -120px;
+		}
+
+		img:nth-child(4) {
+			left: -330px;
+			top: -40px;
+			height: 430px;
+		}
+		&.active img:nth-child(4) {
+			left: -185px;
+			top: 0px;
+			height: 400px;
 		}
 	}
 
@@ -453,7 +527,11 @@ footer {}
 @-webkit-keyframes fade-image {
 	0% { opacity: 0; }
 	5% { opacity: 1; }
-	25% { opacity: 1; }
+
+	// math says 25% but we see image1 through the
+	// combined transitioning transparencies
+	// mucks up fade TO image1 though. hmm.
+	27% { opacity: 1; }
   30% { opacity: 0; }
   100% { opacity: 0; }
 }

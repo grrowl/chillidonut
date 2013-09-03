@@ -64,8 +64,10 @@ $(function () {
 			});
 		});
 	};
+
+	// removed for a fixed-width layout
 	positionItems();
-	$(window).on('resize', positionItems);
+	// $(window).on('resize', positionItems);
 
 	// events
 	$('li', '#projectlist').click(function () {
