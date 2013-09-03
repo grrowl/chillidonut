@@ -110,7 +110,6 @@ section {
 		width: 1600px;
 	}
 }
-section
 section h1 {
 	line-height: 80px;
 	height: 80px;
@@ -221,20 +220,20 @@ section h1 {
 	&.cycle {
 		img {
 			opacity: 0;
-			@include prefix(animation, fade-image 20s ease 0s alternate);
+			@include prefix(animation, fade-image 20s ease 0s infinite);
 		}
 		img:nth-child(1) {
-			// opacity: 1;
-			@include prefix(animation-delay, 4s);
+			opacity: 1 !important;
+			@include prefix(animation-delay, 0s);
 		}
 		img:nth-child(2) {
-			@include prefix(animation-delay, 8s);
+			@include prefix(animation-delay, 5s);
 		}
 		img:nth-child(3) {
-			@include prefix(animation-delay, 12s);
+			@include prefix(animation-delay, 10s);
 		}
 		img:nth-child(4) {
-			@include prefix(animation-delay, 16s);
+			@include prefix(animation-delay, 15s);
 		}
 	}
 }
@@ -454,7 +453,7 @@ footer {}
 @-webkit-keyframes fade-image {
 	0% { opacity: 0; }
 	5% { opacity: 1; }
-	20% { opacity: 1; }
-  45% { opacity: 0; }
+	25% { opacity: 1; }
+  30% { opacity: 0; }
   100% { opacity: 0; }
 }
