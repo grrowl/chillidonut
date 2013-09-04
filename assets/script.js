@@ -49,7 +49,7 @@ $(function () {
 	var positionItems = function () {
 		// explicit positioning
 
-		$('li', '#projectlist').each(function (i, elem) {
+		$('#projectlist > li').each(function (i, elem) {
 			var $this = $(this),
 				index = $this.index(),
 				totalWidth = $this.parent().width();
@@ -70,7 +70,7 @@ $(function () {
 	// $(window).on('resize', positionItems);
 
 	// events
-	$('li', '#projectlist').click(function () {
+	$('#projectlist > li').click(function () {
 		var list = $('#projectlist');
 		var items = list.children();
 		var activeDelta = 300; // vertical movement for modal

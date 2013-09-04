@@ -100,6 +100,9 @@ section {
 	width: 960px;
 	margin: 0px auto;
 }
+/*
+// we absolutely position the items on load so animations work nicely... so this
+// isn't the solution.
 @media all and (min-width: 1280px) {
 	section, header h1 {
 		width: 1280px;
@@ -110,18 +113,19 @@ section {
 		width: 1600px;
 	}
 }
+*/
 section h1 {
 	line-height: 80px;
 	height: 80px;
 	margin: 0;
 }
-#projects ul {
+#projectlist {
 	margin: 0; padding: 0;
 	list-style: none;
 	position: relative;
 	-webkit-perspective: 500;
 }
-#projects ul li {
+#projectlist > li {
 	position: relative;
 	float: left;
 	width: 300px;
@@ -134,27 +138,27 @@ section h1 {
 	@include prefix(transition, all 0.5s ease 0s);
 	/*-webkit-transition: top, left, width, height 0.5s ease 0s;*/
 }
-#projects ul li:nth-child(3n) {
+#projectlist > li:nth-child(3n) {
 	margin-right: 0px;
 }
-#projects ul li:nth-child(3n+1) {
+#projectlist > li:nth-child(3n+1) {
 	clear: left;
 }
-#projects ul li .image {
+#projectlist > li .image {
 	width: 300px;
 	height: 300px;
 	overflow: hidden;
 }
-#projects ul li:hover .image {
+#projectlist > li:hover .image {
 	height: 390px;
 }
-	#projects ul li.text .image {
+	#projectlist > li.text .image {
 		background-color: white;
 
 		color: black;
 		font-weight: bold;
 	}
-	#projects ul li.text .image span {
+	#projectlist > li.text .image span {
 		font-size: 4em;
 		display: block;
 		line-height: 80%;
@@ -170,8 +174,13 @@ section h1 {
 	@include prefix(transition, left 0.5s ease 0s);
 	padding: 0px 2px;
 }
-#projects li:hover h2, #projects li:hover h3, #projects li:hover .opentext {
+#projectlist > li:hover h2,
+#projectlist > li:hover h3,
+#projectlist > li:hover .opentext {
 	left: 8px;
+}
+#projectlist > li:not(.active), #projectlist > li.active .image {
+	cursor: pointer;
 }
 #projects h2 {
 	top: 300px;
@@ -181,13 +190,13 @@ section h1 {
 	white-space: nowrap;
 	/*-webkit-transition: all 0.4s ease 0.01s;*/
 }
-#projects li h3 .agency, #projects li .datenotes {
+#projectlist > li h3 .agency, #projectlist li .datenotes {
 	opacity: 0;
 }
-#projects li .agency {
+#projectlist > li .agency {
 	display: none;
 }
-#projects li .datenotes {
+#projectlist > li .datenotes {
 	background-color: black;
 }
 #projects .content {
@@ -204,7 +213,7 @@ section h1 {
 	top: 300px;
 	@include prefix(transition, all 0.5s ease 0s);
 }
-#projects li:hover .opentext {
+#projects > li:hover .opentext {
 	top: 357px;
 }
 #projects .image {
@@ -370,13 +379,13 @@ section h1 {
 	}
 
 	/* non-opened projects */
-	#projects .modal-active li {
+	#projectlist.modal-active > li {
 		opacity: 0.5;
 		@include prefix(transform, translateZ(-20px));
 	}
 
 	/* opened project */
-	#projects li.active {
+	#projectlist > li.active {
 		position: absolute;
 		/*top: 0px !important;*/
 		/*left: 50% !important;*/
@@ -387,54 +396,61 @@ section h1 {
 		-webkit-transform: none;
 		padding-bottom: 50px;
 	}
-	#projects li.active .image {
+	#projectlist > li.active .image {
 		background-position: 0px 0px;
 		/*float: left;*/
 		height: 100%;
 		width: 450px;
 	}
-	#projects li.active:hover .image {
+	#projectlist li.active:hover .image {
 		/*height: 500px;*/
 		height: 100%;
 	}
-	#projects li.active h2, #projects li.active h3, #projects li.active .content {
+	#projectlist > li.active h2,
+	#projectlist > li.active h3,
+	#projectlist > li.active .content {
 		left: 470px;
 		background-color: transparent;
 		/*width: 450px;*/
 		-webkit-transition: none;
 	}
-	#projects li.active h2 {
+	#projectlist > li.active h2 {
 		font-size: 2em;
 		top: 5px;
 		font-weight: bold;
 		white-space: nowrap;
 	}
-	#projects li.active h3 {
+	#projectlist > li.active h3 {
 		font-size: 1.5em;
 		top: 45px;
 		font-weight: bold;
 	}
-	#projects li.active h3 .agency {
+	#projectlist > li.active h3 .agency {
 		opacity: 0.9;
 		width: 270px;
 		font-weight: normal;
 		display: inline;
 	}
-	#projects li.active .content {
+	#projectlist > li.active .content {
 		top: 80px;
 		width: 450px;
 		height: auto;
 		opacity: 1;
 		line-height: 150%;
 	}
-	#projects li.active .content .description, #projects li.active .datenotes {
+	#projectlist > li.active .content .description, #projectlist > li.active .datenotes {
 		background-color: transparent;
 	}
-	#projects li.active .datenotes {
+	#projectlist > li.active .datenotes {
 		opacity: 1;
 	}
-	#projects li.active .opentext {
+	#projectlist > li.active .opentext {
 		display: none;
+	}
+	#projectlist > li.active .content ul {
+		list-style-type: disc;
+		margin-right: 1em;
+		font-size: 0.9em;
 	}
 
 
@@ -456,9 +472,9 @@ footer {}
 	@include prefix(perspective, 100em);
 	@include prefix(perspective-origin, 50% -0%);
 	@include prefix(transform-style, preserve-3d);
+  @include prefix(transform, rotateX(90deg));
 	@include prefix(animation, #{
-		swingx 15s ease-in-out infinite,
-    roty 60s linear infinite
+		swingx 15s ease-in-out infinite
   });
 
   * {
