@@ -10,15 +10,6 @@
   <script src="assets/script.js"></script>
 </head>
 <body>
-<!--
-  - remove animation on titles returning from active
-  - add varying classes of thing: tumblr image post, tubmlr text post, twitter
-    see images/misc/* and existing tumblr content
-
-low-pri:
-  - scrollTop animation needs to match css animation more closely
-
--->
 <header><div class="container">
   <div id="donut">
     <!-- i.circle*28>i.rotor>i.dot*14
@@ -192,25 +183,60 @@ low-pri:
         <i class="dot"></i><i class="dot"></i>
       </i></i>
   </div>
+  <!-- welcome -->
   <h1>
     chillidonut
   </h1>
   <p>
-    I'm Tom McKenzie &mdash; I love working on cool products on the web and have fun doing it.
+    I'm Tom McKenzie &mdash; I love making awesome internets and I have fun doing it.
   </p>
   <p>
-    If you'd like to work or play with me, <a href="mailto:tom@chillidonut.com">get in touch</a>.
+    If you'd like to work/play, <a href="mailto:tom@chillidonut.com">get in touch</a>.
   </p>
   <nav>
     <ul>
       <li class="icon-github"><a href="http://github.com/grrowl" target="_blank">github</a></li>
       <li class="icon-twitter"><a href="http://twitter.com/grrowl" target="_blank">twitter</a></li>
+      <li><a href="resume.html" target="_blank">curriculum vitae</a></li>
     </ul>
   </nav>
 </div></header>
 <section id="projects">
   <h1>selected works</h1>
   <ul id="projectlist">
+    <li class="a4l">
+      <div class="image cycle">
+        <img src="images/a4l/a4l1.jpg" />
+        <img src="images/a4l/a4l2.jpg" />
+        <img src="images/a4l/a4l3.jpg" />
+      </div>
+      <h2>Accounts4Life</h2>
+      <h3>Prototype <span class="agency">with
+        <a href="http://www.wavedigital.com.au/" target="_blank">Wave Digital</a>
+      </span></h3>
+      <div class="opentext">read more</div>
+      <div class="content">
+        <div class="datenotes">
+          September 2013 - Design, front-end and back-end development (Ruby on Rails), esoteric data parsing
+        </div>
+        <div class="description">
+          <p>
+            To validate a business idea, Terry needed a prototype that allowed users to
+            route money between many sources and destinations completely intuitively,
+            be rock-solid with an obvious and slick user experience, and
+            parse existing bank transaction files (used by all banks today to transfer money).
+            All on a start-up budget.
+          </p>
+          <p>
+            The prototype was a resounding success and successfully proved the business as
+            not just viable, but an obvious investment.
+          </p>
+          <p>
+            <a href="http://www.accounts4life.com.au/" target="_blank">Visit site</a>
+          </p>
+        </div>
+      </div>
+    </li>
     <li class="mario">
       <div class="image cycle">
         <img src="images/mario/mario1.jpg" />
@@ -218,9 +244,9 @@ low-pri:
         <img src="images/mario/mario3.jpg" />
         <img src="images/mario/mario4.jpg" />
       </div>
-      <h2>Mario Kart Wii</h2>
-      <h3>Nintendo Australia <span class="agency">for
-        <a href="http://www.blissmedia.com.au/">Blissmedia</a>
+      <h2>Mario Kart Wii <span class="awardstar">&#x2605;</span></h2>
+      <h3>Nintendo Australia <span class="agency">with
+        <a href="http://www.blissmedia.com.au/" target="_blank">Blissmedia</a>
       </span></h3>
       <div class="opentext">read more</div>
       <div class="content">
@@ -233,14 +259,16 @@ low-pri:
           </p>
           <p>
             Includes Facebook application to allow users to 'attack' or 'defend' by posting
-            Mario Kart items on friends' and thier own walls, leading to tens of thousands of impressions. Compatible with IE7 while leveraging <small>[at the time]</small> cutting-edge features like <code>requestAnimationFrame</code> and HTML5 video.
+            Mario Kart items on friends' and thier own walls, leading to tens of thousands of impressions.
+            <!--
+            Compatible with IE7 while leveraging <small>[at the time]</small> cutting-edge features like <code>requestAnimationFrame</code> and HTML5 video.
+            -->
           </p>
-          <!--
-          <ul>
-            <li>Winner of Awwwards site of the day June 6th</li>
-            <li>FWA site of the day July 1st. Winner MADC Awards 2011 (Silver - Best microsite)</li>
+          <ul class="awardlist">
+            <li>Awwwards site of the day (June 6th 2011)</li>
+            <li>FWA site of the day (July 1st)</li>
+            <li>Winner MADC Awards 2011 (Best Microsite)</li>
           </ul>
-          -->
           <p>
             <a href="http://www.nintendo.com.au/gamesites/mariokartwii/"
               target="_blank">Visit site</a>
@@ -282,8 +310,8 @@ low-pri:
         <img src="images/maxs/maxs.jpg" />
       </div>
       <h2>Max's 12 Week Challenge</h2>
-      <h3>Max's Protein <span class="agency">for
-        <a href="http://www.blissmedia.com.au/">Blissmedia</a>
+      <h3>Max's Protein <span class="agency">with
+        <a href="http://www.blissmedia.com.au/" target="_blank">Blissmedia</a>
       </span></h3>
       <div class="opentext">read more</div>
       <div class="content">
@@ -334,10 +362,10 @@ low-pri:
         <div class="datenotes">March 2012 - Front-end development and User Experience</div>
         <div class="description">
           <p>
-            A bold, interactive experience to showcase the strong design and
+            A bold, interactive experience to showcase the strong design work and
             provide deep interactivity as the user explores the site. Lots of little touches
-            in the movement between sections, animations to explain each point and
-            the 10-foot slideshow.
+            as you move between sections, with animations to explain each key point,
+            and an awesome 10-foot slideshow.
           </p>
           <p>
             <a href="http://www.saganowski.com/" target="_blank">Visit site</a>
@@ -345,20 +373,6 @@ low-pri:
         </div>
       </div>
     </li>
-    <!--
-    <li class="text">
-      <div class="image"><span>Review: Mario Kart Wii Development</span></div>
-      <h2>Mario Kart Wii Development</h2>
-      <h3>06 June</h3>
-      <div class="opentext">read more</div>
-      <div class="content">
-        <div class="datenotes">June 2011 - HTML / CSS / UX / FB API</div>
-        <div class="description">
-          <p>This was a thing, we did a thing, lorem ipsum, randy rando paragraph text</p>
-        </div>
-      </div>
-    </li>
-    -->
   </ul>
 </section>
 <footer>
