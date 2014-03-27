@@ -1,6 +1,6 @@
 /*
 from <http://matthewlein.com/ceaser/>:
-	easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000)
+	 InOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000)
 	- too much for the big effect, the "jump" is too sudden
 */
 @mixin prefix($name, $argument) {
@@ -9,11 +9,34 @@ from <http://matthewlein.com/ceaser/>:
   -moz-#{$name}: $argument;
 }
 
+@mixin gradient($steps...) {
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($steps);
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left top, $steps);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($steps);
+
+	background-size: 40px 40px;
+}
+
+// striped background
+@mixin stripy-bg($primary, $stripe) {
+	$bg-gradient: $primary 0%, $primary 25%, $stripe 25%,
+																$stripe 50%, $primary 50%,
+																$primary 75%, $stripe 75%;
+	@include gradient($bg-gradient);
+}
+
 body {
 	margin: 0;
 	color: #dfe2e2;
-	background: #1e2a38 url('../images/background.png') top left;
 	font-family: sans-serif;
+	background-color: #1e2a38;
+	@include stripy-bg(#1a2735, #101d2c);
+	background-attachment: fixed;
 }
 a, a:link, a:active, a:visited, a:hover {
 	/*color: inherit;*/
@@ -43,28 +66,27 @@ header {
 	}
 
 	header h1 {
+		font-size: 5em;
+		margin: 0.1em 0 0.3em;
+		line-height: 0.8;
+		font-weight: bolder;
+
+		color: white;
+
+		// @include prefix(animation, scroll-bg 20s cubic-bezier(0.860, 0.000, 0.070, 1.000) 0s infinite);
+		/*
 		text-indent: 50px;
-		/*width: 960px;*/
-		/*height: 190px;*/
-		/*margin: 0px auto;*/
-		/*border-bottom: 1px solid #dfe2e2;*/
-		/*line-height: 190px;*/
-		/*text-align: center;*/
-	}
-	header #donut {
-		position: absolute;
-		top: 43px;
-		left: -5px;
-		width: 40px;
-		height: 40px;
-	}
-	header canvas {
-		position: absolute;
-		top: 0px;
-		left: 50%;
 		width: 960px;
-		margin-left: -480px;
-		height: 100%;
+		height: 190px;
+		margin: 0px auto;
+		border-bottom: 1px solid #dfe2e2;
+		line-height: 190px;
+		text-align: center;
+		*/
+	}
+
+	header p {
+		margin-right: 355px;
 	}
 
 	header nav {
@@ -516,88 +538,6 @@ section h1 {
 	#projectdetail { display: none; }
 
 footer {}
-
-/* donut */
-#donut {
-	// width: 100%;
-	// height: 300px;
-	// background-color: black;
-
-	$wideness: 1em;
-	$thickness: 0.65em;
-	$circles: 28;
-	$sides: 14;
-
-	@include prefix(perspective, 100em);
-	@include prefix(perspective-origin, 50% -0%);
-	@include prefix(transform-style, preserve-3d);
-  @include prefix(transform, rotateX(90deg));
-	@include prefix(animation, #{
-		swingx 15s ease-in-out infinite
-  });
-
-  * {
-		@include prefix(transform-style, preserve-3d);
-  	@include prefix(backface-visibility, hidden);
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	}
-
-	@for $i from 0 through $circles {
-	  .circle:nth-child(#{$i}) {
-			@include prefix(transform, #{rotateY($i / $circles * 360deg) translateZ($wideness)});
-	  }
-	}
-	.circle {}
-  .rotor {
-		@include prefix(animation, rotx 15s linear 0s infinite);
-  }
-
-	@for $i from 0 through $sides {
-		.dot:nth-child(#{$i}) {
-  		@include prefix(transform, rotateX($i / $sides * 360deg) translateZ($thickness));
-		}
-	}
-
-  .dot {
-  	// @include prefix(animation, roty 15s linear 0s infinite);
-  	background-color: white;
-  	width: 0.25em;
-  	height: 0.25em;
-		border-radius: 50%;
-		// border: 1px solid black;
-  }
-  .dot:nth-child(3n) {
-		opacity: 0.8;
-  }
-  .dot:nth-child(3n+1) {
-		opacity: 0.6;
-  }
-  .dot:nth-child(3n+2) {
-		opacity: 0.4;
-  }
-}
-
-@-webkit-keyframes rotx {
-  to { @include prefix(transform, rotateX(360deg)); }
-}
-
-@-webkit-keyframes swingx {
-  0% { @include prefix(transform, rotateX(-50deg)); }
-  50% { @include prefix(transform, rotateX(-20deg)); }
-  100% { @include prefix(transform, rotateX(-50deg)); }
-}
-
-@-webkit-keyframes swingz {
-  0% { @include prefix(transform, rotateZ(-15deg)); }
-  50% { @include prefix(transform, rotateZ(15deg)); }
-  to { @include prefix(transform, rotateZ(-15deg)); }
-}
-
-@-webkit-keyframes roty {
-  to { @include prefix(transform, rotateY(-360deg)); }
-}
 
 @-webkit-keyframes fade-image {
 	0% { opacity: 0; }

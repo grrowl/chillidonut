@@ -16,7 +16,8 @@
 	};
 
 	$.scroll = function(endY, duration, easingF) {
-		endY = endY || ($.os.android ? 1 : 0);
+		var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+		endY = endY || (isAndroid ? 1 : 0);
 		duration = duration || 200;
 		(typeof easingF === 'function') && (easing = easingF);
 
@@ -35,7 +36,7 @@
 
 		animate();
 	};
-}(Zepto));
+}(jQuery));
 
 //
 // update scroll position on click
@@ -58,8 +59,8 @@ $(function () {
 
 			$this.css({
 				position: 'absolute',
-				left: (index%cols * ITEM_SIZE.width),
-				top: (~~(index/cols) * ITEM_SIZE.height) + 1, // bug in zepto: '0' means null, unsets css and won't animate
+				left: (index%cols * ITEM_SIZE.width) + 'px',
+				top: (~~(index/cols) * ITEM_SIZE.height) + 'px',
 				float: 'none'
 			});
 		});

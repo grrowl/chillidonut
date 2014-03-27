@@ -5,190 +5,19 @@
   <title>chillidonut</title>
   <link rel="stylesheet" type="text/css" href="assets/main.css" />
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <link href='http://fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <script src="assets/zepto.min.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=Pontano+Sans&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script>window.jQuery || document.write('<script src="vendor\/jquery-2.1.0.min.js"><\/script>');</script>
   <script src="assets/script.js"></script>
 </head>
 <body>
 <header><div class="container">
-  <div id="donut">
-    <!-- i.circle*28>i.rotor>i.dot*14
-    you can pretty much scroll right past this -->
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-    <i class="circle"><i class="rotor">
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i>
-        <i class="dot"></i><i class="dot"></i>
-      </i></i>
-  </div>
   <!-- welcome -->
   <h1>
     chillidonut
   </h1>
   <p>
-    I'm Tom McKenzie &mdash; I love making awesome internets and I have fun doing it.
+    Hi, I'm Tom McKenzie &mdash; I love making awesome internet and I have heaps of fun doing it.
   </p>
   <p>
     If you'd like to work or play, <a href="mailto:tom@chillidonut.com">get in touch</a>.
@@ -197,6 +26,7 @@
     <ul>
       <li class="icon-github"><a href="http://github.com/grrowl" target="_blank">github</a></li>
       <li class="icon-twitter"><a href="http://twitter.com/grrowl" target="_blank">twitter</a></li>
+      <li><a href="http://thisdevblog.tumblr.com/" target="_blank">devblog</a></li>
       <li><a href="resume.html" target="_blank">curriculum vitae</a></li>
     </ul>
   </nav>
