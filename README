@@ -2,6 +2,10 @@
 
 repo for the next, incredibly-delayed version of my portfolio/site
 
+## build
+
+Built with jekyll, so generating a fresh version is as easy as: `jekyll build`
+
 ## css slideshow notes:
 ```
 4 slides @ 5 seconds each = 20s duration
