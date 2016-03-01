@@ -1,5 +1,5 @@
 name: chillidonut
-pygments: true
+highlighter: pygments
 
 # sass
 sass:
