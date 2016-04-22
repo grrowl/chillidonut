@@ -43,19 +43,22 @@
 //
 $(function () {
 	var scrollPos = { prev: 0, active: 0, offset: 100 },
-		ITEM_SIZE = { width: 320, height: 400 };
+		ITEM_SIZE = { width: 320, height: 400 },
+    MARGIN = 30;
 
 
-	var cols;
+	// var cols = 1;
 	var positionItems = function () {
 		// explicit positioning
+    var totalWidth = $('#projectlist').parent().width();
+
+    // if (totalWidth > 960) {
+      cols = Math.floor(totalWidth/ITEM_SIZE.width);
+    // }
 
 		$('#projectlist > li').each(function (i, elem) {
 			var $this = $(this),
-				index = $this.index(),
-				totalWidth = $this.parent().width();
-
-			cols = Math.floor(totalWidth/ITEM_SIZE.width);
+				index = $this.index();
 
 			$this.css({
 				position: 'absolute',
@@ -69,6 +72,7 @@ $(function () {
 	// removed for a fixed-width layout
 	positionItems();
 	// $(window).on('resize', positionItems);
+	$(window).on('resize', debounce(positionItems, 100));
 
 	// events
 	$('#projectlist > li').click(function () {
@@ -85,7 +89,7 @@ $(function () {
 				if ((active.index()) + 1 % cols == 0) nextRowDelta = 0;
 
 				if ($('body')[0].scrollTop == scrollPos.active) {
-					$.scroll(scrollPos.prev, 500);
+					$.scroll(scrollPos.prev, 75);
 				}
 
 				positionItems('li');
@@ -161,3 +165,21 @@ $(function () {
 
 	}, 1000);
 });
+
+// <https://davidwalsh.name/javascript-debounce-function>
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds.
+ function debounce(func, wait, immediate) {
+     var timeout;              //Why is this set to nothing?
+     return function() {
+         var context = this,
+         args = arguments;
+         clearTimeout(timeout);   // If timeout was just set to nothing, what can be cleared?
+         timeout = setTimeout(function() {
+              timeout = null;
+              if (!immediate) func.apply(context, args);
+         }, wait);
+         if (immediate && !timeout) func.apply(context, args);  //This applies the original function to the context and to these arguments?
+      };
+ };

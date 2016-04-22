@@ -5,3 +5,25 @@ highlighter: pygments
 sass:
   syntax: scss        # scss|sass
   style:  nested  # nested|expanded|compact|compressed
+
+collections:
+  pages:
+    output: true
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      path:         "pages"
+      type:         pages
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
