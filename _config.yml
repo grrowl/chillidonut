@@ -3,7 +3,7 @@ highlighter: pygments
 gems: ['jekyll/minibundle']
 exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', 'vendor', 'README.md', 'LICENSE', 'package.json']
 baseurl: /
-asseturl: /assets
+asseturls: ['/assets']
 
 # sass
 sass:

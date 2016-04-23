@@ -10,7 +10,7 @@ layout: home
       <li class="{{ page.class }}" data-page="{{ page.title | slugify }}">
         <div class="image cycle">
           {% for image in page.images %}
-            <img src="{{ site.asseturl }}/images/{{ image }}" />
+            <img src="{{ site.asseturls | sample }}/images/{{ image }}" />
           {% endfor %}
         </div>
         <h2>{{ page.title | xml_escape }}</h2>
