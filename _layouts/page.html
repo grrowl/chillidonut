@@ -1,6 +1,6 @@
 {% include head.html %}
 <header><div class="container">
-  <!-- welcome -->
+  <!-- {{ site.mwehehe | sample }} -->
   <h1>
     <a href="/">chillidonut</a>
   </h1>
@@ -13,6 +13,17 @@
   </p>
 </div></header>
 
-{{ content }}
+<article>
+  <div class="container">
+    <h1>{{ page.title | xml_escape }}</h1>
+    <h3>{{ page.subtitle }}</h3>
 
-{% include foot.html %}
+    {{ content }}
+
+    {% for image in page.images %}
+      <img src="//assets.chillidonut.com/images/{{ image }}" />
+    {% endfor %}
+  </div>
+</article>
+
+{% include foot.html skipjs="yes" %}

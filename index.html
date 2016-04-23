@@ -7,16 +7,21 @@ title: chillidonut
   <h1>selected works</h1>
   <ul id="projectlist">
     {% for page in site.pages %}
-      <li class="{{ page.class }}">
+      <li class="{{ page.class }}" data-page="{{ page.title | slugify }}">
         <div class="image cycle">
           {% for image in page.images %}
             <img src="//assets.chillidonut.com/images/{{ image }}" />
           {% endfor %}
         </div>
-        <h2>{{ page.title }}</h2>
-        {{ page.content }}
+        <h2>{{ page.title | xml_escape }}</h2>
+        <h3>{{ page.subtitle }}</h3>
+        <a href="{{ page.url }}" class="opentext">
+          read more
+        </a>
+        <div class="content">
+          {{ page.content }}
+        </div>
       </li>
-
     {% endfor %}
   </ul>
 </section>

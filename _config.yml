@@ -1,10 +1,15 @@
 name: chillidonut
 highlighter: pygments
+gems: ['jekyll/minibundle']
 
 # sass
 sass:
   syntax: scss        # scss|sass
   style:  nested  # nested|expanded|compact|compressed
+
+minibundle:
+  minifier_commands:
+    js: node_modules/.bin/uglifyjs --
 
 collections:
   pages:
@@ -22,8 +27,15 @@ defaults:
       type:         pages
     values:
       layout:       "page"
-  -
-    scope:
-      type:         "posts"
-    values:
-      layout:       "post"
+
+mwehehe:
+  - ヽ(⌐■_■)ノ♪♬
+  - ┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ)
+  - (つ•̀ᴥ•́)つ*:･ﾟ✧
+  - (^ ◕ᴥ◕ ^)
+  - └(՞▃՞ └)
+  - (╯ಠ‿ಠ)╯︵┻━┻
+  - ༼ ºل͟º༼ ºل͟º༽
+  - ( ರ Ĺ̯ ರೃ )
+
+
