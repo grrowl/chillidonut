@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 {% include head.html %}
 <header><div class="container">
   <!-- {{ site.mwehehe | sample }} -->
@@ -21,7 +25,7 @@
     {{ content }}
 
     {% for image in page.images %}
-      <img src="//assets.chillidonut.com/images/{{ image }}" />
+      <img src="{{ site.asseturl }}/images/{{ image }}" />
     {% endfor %}
   </div>
 </article>

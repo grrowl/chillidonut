@@ -123,11 +123,12 @@ $(function () {
       $.scroll(scrollPos.active, 500);
       // self.one('transitionEnd webkitTransitionEnd', function (ev) { $('body')[0].scrollTop = self.offset().top; });
 
-      items.slice(self.index() + 1).each(function (i) {
-        var item = $(this);
-        // console.log('expand', i, this);
-        item.css('top', parseInt(item.css('top')) + (nextRowDelta + activeDelta));
-      });
+      // moving this to css~~
+      // items.slice(self.index() + 1).each(function (i) {
+      //   var item = $(this);
+      //   // console.log('expand', i, this);
+      //   item.css('top', parseInt(item.css('top')) + (nextRowDelta + activeDelta));
+      // });
       list.addClass('modal-active');
 
       console.info('send', 'event', 'content-window', 'open', self.data('page'))
@@ -143,36 +144,21 @@ $(function () {
   }, 500);
 });
 
-//
-// background triangles
-//
+// track outbound links
 $(function () {
-  var baseOffset = { x: 18, y: 3 },
-      gridSize = { x: 188, y: 178 },
-      triangles = [
-        { x: 146, y: 3 },
-        { x: 146, y: 19 },
-        { x: 52, y: 16 },
-        { x: 71, y: 16 }
-      ];
-
-  // every event,
-  // pick a visible tile grid spot
-  // pick a random triangle within that grid square
-  //  css:
-  //    position = baseOffset + triangleOffset
-  //    background-position = triangleOffset
-
-  setInterval(function () {
-    var grid = {
-      x: ~~(Math.random() * 6),
-      y: ~~(Math.random() * 3)
-    };
-
-
-
-  }, 1000);
-});
+  $(document).on('click', 'a[href^="http"]', function (ev) {
+    console.info({
+      eventCategory: 'outbound',
+      eventAction: 'click',
+      eventLabel: ev.target.href
+    });
+    ga && ga('send', 'event', {
+      eventCategory: 'Outbound Link',
+      eventAction: 'click',
+      eventLabel: ev.target.href
+    });
+  })
+})
 
 // <https://davidwalsh.name/javascript-debounce-function>
 // Returns a function, that, as long as it continues to be invoked, will not

@@ -76,7 +76,7 @@ header {
     font-family: 'Input Serif Cond', sans-serif;
     font-weight: normal;
   }
-  p {
+  p, ul, ol {
     font-family: 'Input Sans Cond Ex Lt', sans-serif;
   }
 
@@ -261,7 +261,16 @@ section h1 {
   /* non-opened projects */
   #projectlist.modal-active > li {
     opacity: 0.5;
-    @include prefix(transform, translateZ(-20px));
+    // @include prefix(transform, translateZ(-20px));
+    -webkit-transform: translateZ(-20px);
+    -ms-transform: translateZ(-20px);
+    transform: translateZ(-20px);
+  }
+  #projectlist.modal-active > li.active ~ li {
+    opacity: 0.5;
+    -webkit-transform: translateZ(-20px) translateY(400px);
+    -ms-transform: translateZ(-20px) translateY(400px);
+    transform: translateZ(-20px) translateY(400px);
   }
 
   /* opened project */
@@ -273,8 +282,11 @@ section h1 {
     z-index: 10;
     /*background-color: black;*/
     opacity: 1;
+    /*padding-bottom: 50px;*/
     -webkit-transform: none;
-    padding-bottom: 50px;
+    -ms-transform: none;
+    transform: none;
+    background-color: rgba(white, 0.5)
   }
   #projectlist > li.active .image {
     background-position: 0px 0px;
@@ -316,7 +328,7 @@ section h1 {
     width: 450px;
     height: auto;
     opacity: 1;
-    line-height: 150%;
+    line-height: 130%;
   }
   #projectlist > li.active .content .description, #projectlist > li.active .datenotes {
     background-color: transparent;
@@ -380,7 +392,6 @@ section h1 {
       height: 390px;
     }
     #projectlist > li .image img {
-      // transform: scale(2), translateX(50%);
       width: 100%;
       height: auto !important;
       left: 0 !important;
@@ -403,6 +414,10 @@ section h1 {
 
   /* projects list */
   #projects .a4l {
+    &.active {
+      height: 475px;
+    }
+
     img {
       left: -130px;
       top: -58px;
@@ -439,6 +454,10 @@ section h1 {
   }
 
   #projects .mario {
+    &.active {
+      height: 525px;
+    }
+
     img {
       left: -190px;
       top: 0px;
@@ -501,6 +520,10 @@ section h1 {
   }
 
   #projects .maxs {
+    &.active {
+      height: 440px;
+    }
+
     img {
       left: -206px;
       top: 0px;

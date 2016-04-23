@@ -1,6 +1,9 @@
 name: chillidonut
 highlighter: pygments
 gems: ['jekyll/minibundle']
+exclude: ['Gemfile', 'node_modules', 'vendor', 'README.md']
+baseurl: /
+asseturl: /assets
 
 # sass
 sass:
