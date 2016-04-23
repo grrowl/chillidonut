@@ -1,0 +1,13 @@
+{
+  "name": "chillidonut",
+  "author": "Tom McKenzie <tom@chillidonut.com>",
+  "homepage": "https://chillidonut.com/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grrowl/chillidonut.git"
+  },
+  "dependencies": {
+    "html-minifier": "^2.0.0"
+  }
+}

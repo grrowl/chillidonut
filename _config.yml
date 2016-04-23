@@ -1,7 +1,7 @@
 name: chillidonut
 highlighter: pygments
 gems: ['jekyll/minibundle']
-exclude: ['Gemfile', 'node_modules', 'vendor', 'README.md']
+exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', 'vendor', 'README.md', 'LICENSE', 'package.json']
 baseurl: /
 asseturl: /assets
 
@@ -40,5 +40,3 @@ mwehehe:
   - (╯ಠ‿ಠ)╯︵┻━┻
   - ༼ ºل͟º༼ ºل͟º༽
   - ( ರ Ĺ̯ ರೃ )
-
-
