@@ -386,6 +386,12 @@ section h1 {
       white-space: nowrap;
       /*-webkit-transition: all 0.4s ease 0.01s;*/
     }
+    #projects h2.shorttitle {
+      display: none;
+    }
+    #projects h2.longtitle {
+      display: block;
+    }
     #projects > ul > li:hover h2,
     #projects > ul > li:hover h3 {
       // left: 14px;
