@@ -5,7 +5,7 @@ layout: home
 
 <section id="projects">
   <h1>selected works</h1>
-  <ul id="projectlist">
+  <ul>
     {% for page in site.pages %}
       <li class="{{ page.class }}" data-page="{{ page.title | slugify }}">
         <div class="image cycle">
@@ -13,7 +13,12 @@ layout: home
             <img src="{{ site.asseturls | sample }}/images/{{ image }}" />
           {% endfor %}
         </div>
-        <h2>{{ page.title | xml_escape }}</h2>
+        {% if page.shorttitle %}
+          <h2 class="shorttitle">{{ page.shorttitle | xml_escape }}</h2>
+          <h2 class="longtitle">{{ page.title | xml_escape }}</h2>
+        {% else %}
+          <h2>{{ page.title | xml_escape }}</h2>
+        {% endif %}
         <h3>{{ page.subtitle }}</h3>
         <a href="{{ page.url }}" class="opentext">
           read more

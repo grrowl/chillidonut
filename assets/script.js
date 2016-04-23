@@ -49,7 +49,7 @@ $(function () {
   var cols;
   var positionItems = function () {
     // explicit positioning
-    var totalWidth = $('#projectlist').parent().width();
+    var totalWidth = $('#projects > ul').parent().width();
 
     if (totalWidth >= 960) {
       cols = Math.floor(totalWidth/itemSize.width);
@@ -59,7 +59,7 @@ $(function () {
       itemSize.height = 160;
     }
 
-    $('#projectlist > li').each(function (i, elem) {
+    $('#projects > ul > li').each(function (i, elem) {
       var $this = $(this),
         index = $this.index();
 
@@ -78,12 +78,12 @@ $(function () {
   $(window).on('resize', debounce(positionItems, 100));
 
   // events
-  $('#projectlist > li').on('click touch', function (ev) {
+  $('#projects > ul > li').on('click touch', function (ev) {
     // in case of .opentext links
     if ($(ev.target).prop('href'))
       return;
 
-    var list = $('#projectlist');
+    var list = $('#projects > ul');
     var items = list.children();
     var activeDelta = 300; // vertical movement for modal
     var nextRowDelta = 400; // ... for the rest of the children

@@ -102,13 +102,13 @@ section h1 {
   font-family: 'Input Sans Cond Ex Lt', sans-serif;
   font-weight: normal;
 }
-#projectlist {
+#projects > ul {
   margin: 0; padding: 0;
   list-style: none;
   position: relative;
   -webkit-perspective: 500;
 }
-#projectlist > li {
+#projects > ul > li {
   position: relative;
   float: left;
   width: 300px;
@@ -117,31 +117,31 @@ section h1 {
   opacity: 1;
   overflow: hidden;
 }
-#projects.animated ul li {
+#projects.animated > ul > li {
   @include prefix(transition, all 0.5s ease 0s);
   /*-webkit-transition: top, left, width, height 0.5s ease 0s;*/
 }
-#projectlist > li:nth-child(3n) {
+#projects > ul > li:nth-child(3n) {
   margin-right: 0px;
 }
-#projectlist > li:nth-child(3n+1) {
+#projects > ul > li:nth-child(3n+1) {
   clear: left;
 }
-#projectlist > li .image {
+#projects > ul > li .image {
   width: 300px;
   height: 300px;
   overflow: hidden;
 }
-#projectlist > li:hover .image {
+#projects > ul > li:hover .image {
   height: 390px;
 }
-  #projectlist > li.text .image {
+  #projects > ul > li.text .image {
     background-color: cyan;
 
     color: black;
     font-weight: bold;
   }
-  #projectlist > li.text .image span {
+  #projects > ul > li.text .image span {
     font-size: 4em;
     display: block;
     line-height: 80%;
@@ -180,29 +180,32 @@ section h1 {
   }
 }
 
-#projectlist > li:hover h2,
-#projectlist > li:hover h3,
-#projectlist > li:hover .opentext {
+#projects > ul > li:hover h2,
+#projects > ul > li:hover h3,
+#projects > ul > li:hover .opentext {
   left: 8px;
 }
-#projectlist > li:not(.active), #projectlist > li.active .image {
+#projects > ul > li:not(.active), #projects > ul > li.active .image {
   cursor: pointer;
 }
 #projects h2 {
   top: 300px;
+}
+#projects h2.longtitle {
+  display: none;
 }
 #projects h3 {
   top: 330px;
   white-space: nowrap;
   /*-webkit-transition: all 0.4s ease 0.01s;*/
 }
-#projectlist > li h3 .agency, #projectlist li .datenotes {
+#projects > ul > li h3 .agency, #projects > ul > li .datenotes {
   opacity: 0;
 }
-#projectlist > li .agency {
+#projects > ul > li .agency {
   display: none;
 }
-#projectlist > li .datenotes {
+#projects > ul > li .datenotes {
   background-color: black;
 }
 #projects .content {
@@ -220,10 +223,10 @@ section h1 {
   top: 300px;
   @include prefix(transition, all 0.5s ease 0s);
 }
-#projectlist .opentext:hover {
+#projects > ul .opentext:hover {
   text-decoration: underline;
 }
-#projectlist > li:hover .opentext {
+#projects > ul > li:hover .opentext {
   top: 357px;
 }
 #projects .image {
@@ -259,14 +262,14 @@ section h1 {
 }
 
   /* non-opened projects */
-  #projectlist.modal-active > li {
+  #projects > ul.modal-active > li {
     opacity: 0.5;
     // @include prefix(transform, translateZ(-20px));
     -webkit-transform: translateZ(-20px);
     -ms-transform: translateZ(-20px);
     transform: translateZ(-20px);
   }
-  #projectlist.modal-active > li.active ~ li {
+  #projects > ul.modal-active > li.active ~ li {
     opacity: 0.5;
     -webkit-transform: translateZ(-20px) translateY(400px);
     -ms-transform: translateZ(-20px) translateY(400px);
@@ -274,7 +277,7 @@ section h1 {
   }
 
   /* opened project */
-  #projectlist > li.active {
+  #projects > ul > li.active {
     position: absolute;
     /*top: 0px !important;*/
     /*left: 50% !important;*/
@@ -288,58 +291,64 @@ section h1 {
     transform: none;
     background-color: rgba(white, 0.5)
   }
-  #projectlist > li.active .image {
+  #projects > ul > li.active .image {
     background-position: 0px 0px;
     /*float: left;*/
     height: 100%;
     width: 450px;
   }
-  #projectlist li.active:hover .image {
+  #projects > ul li.active:hover .image {
     /*height: 500px;*/
     height: 100%;
   }
-  #projectlist > li.active h2,
-  #projectlist > li.active h3,
-  #projectlist > li.active .content {
+  #projects > ul > li.active h2,
+  #projects > ul > li.active h3,
+  #projects > ul > li.active .content {
     left: 470px;
     background-color: transparent;
     /*width: 450px;*/
     -webkit-transition: none;
   }
-  #projectlist > li.active h2 {
+  #projects > ul > li.active h2 {
     font-size: 2em;
     top: 5px;
     font-weight: bold;
     white-space: nowrap;
   }
-  #projectlist > li.active h3 {
+  #projects > ul > li.active h2.shorttitle {
+    display: none;
+  }
+  #projects > ul > li.active h2.longtitle {
+    display: block;
+  }
+  #projects > ul > li.active h3 {
     font-size: 1.5em;
     top: 45px;
     font-weight: bold;
   }
-  #projectlist > li.active h3 .agency {
+  #projects > ul > li.active h3 .agency {
     opacity: 0.9;
     width: 270px;
     font-weight: normal;
     display: inline;
   }
-  #projectlist > li.active .content {
+  #projects > ul > li.active .content {
     top: 80px;
     width: 450px;
     height: auto;
     opacity: 1;
     line-height: 130%;
   }
-  #projectlist > li.active .content .description, #projectlist > li.active .datenotes {
+  #projects > ul > li.active .content .description, #projects > ul > li.active .datenotes {
     background-color: transparent;
   }
-  #projectlist > li.active .datenotes {
+  #projects > ul > li.active .datenotes {
     opacity: 1;
   }
-  #projectlist > li.active .opentext {
+  #projects > ul > li.active .opentext {
     display: none;
   }
-  #projectlist > li.active .content ul {
+  #projects > ul > li.active .content ul {
     list-style-type: disc;
     margin-right: 1em;
     font-size: 0.9em;
@@ -350,12 +359,12 @@ section h1 {
       padding-left: 10px;
       padding-right: 10px;
     }
-    #projectlist > li {
+    #projects > ul > li {
       width: 100%;
       height: 150px;
       margin-right: 0px;
     }
-    #projectlist > li .opentext {
+    #projects > ul > li .opentext {
       position: absolute;
       top: 0 !important;
       left: 0 !important;
@@ -377,23 +386,23 @@ section h1 {
       white-space: nowrap;
       /*-webkit-transition: all 0.4s ease 0.01s;*/
     }
-    #projectlist > li:hover h2,
-    #projectlist > li:hover h3 {
+    #projects > ul > li:hover h2,
+    #projects > ul > li:hover h3 {
       // left: 14px;
     }
-    #projectlist > li .image {
+    #projects > ul > li .image {
       width: 100%;
       height: 150px;
     }
-    #projectlist > li:hover .image {
+    #projects > ul > li:hover .image {
       height: 390px;
     }
-    #projectlist > li .image img {
+    #projects > ul > li .image img {
       width: 100%;
       height: auto !important;
       left: 0 !important;
     }
-    #projectlist > li.active {
+    #projects > ul > li.active {
       /* width: 100%; */
     }
   }
