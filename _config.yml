@@ -24,12 +24,6 @@ defaults:
       path:         ""
     values:
       layout:       "null"
-  -
-    scope:
-      path:         "pages"
-      type:         pages
-    values:
-      layout:       "page"
 
 mwehehe:
   - ヽ(⌐■_■)ノ♪♬
