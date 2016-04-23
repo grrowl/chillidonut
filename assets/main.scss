@@ -192,7 +192,7 @@ section h1 {
   top: 300px;
 }
 #projects h2.longtitle {
-  display: none;
+  visibility: hidden;
 }
 #projects h3 {
   top: 330px;
@@ -316,10 +316,10 @@ section h1 {
     white-space: nowrap;
   }
   #projects > ul > li.active h2.shorttitle {
-    display: none;
+    visibility: hidden;
   }
   #projects > ul > li.active h2.longtitle {
-    display: block;
+    visibility: visible;
   }
   #projects > ul > li.active h3 {
     font-size: 1.5em;
@@ -387,10 +387,10 @@ section h1 {
       /*-webkit-transition: all 0.4s ease 0.01s;*/
     }
     #projects h2.shorttitle {
-      display: none;
+      visibility: hidden;
     }
     #projects h2.longtitle {
-      display: block;
+      visibility: visible;
     }
     #projects > ul > li:hover h2,
     #projects > ul > li:hover h3 {
