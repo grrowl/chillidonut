@@ -96,7 +96,7 @@ $(function () {
         if ((active.index()) + 1 % cols == 0) nextRowDelta = 0;
 
         if ($('body')[0].scrollTop == scrollPos.active) {
-          $.scroll(scrollPos.prev, 75);
+          $.scroll(scrollPos.prev, 750);
         }
 
         positionItems();
