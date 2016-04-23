@@ -78,7 +78,7 @@ $(function () {
   $(window).on('resize', debounce(positionItems, 100));
 
   // events
-  $('#projectlist > li').click(function (ev) {
+  $('#projectlist > li').on('click touch', function (ev) {
     // in case of .opentext links
     if ($(ev.target).prop('href'))
       return;
