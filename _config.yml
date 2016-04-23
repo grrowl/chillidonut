@@ -23,7 +23,12 @@ defaults:
     scope:
       path:         ""
     values:
-      layout:       "null"
+      layout:       "default"
+  -
+    scope:
+      type:         pages
+    values:
+      layout:       "page"
 
 mwehehe:
   - ヽ(⌐■_■)ノ♪♬
