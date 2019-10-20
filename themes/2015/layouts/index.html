@@ -1,0 +1,38 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+<section id="projects">
+  <h1>selected works</h1>
+  <ul>
+    {{- range .Pages -}}
+      <li class="{{ .Params.class }}" data-page="{{ .Title | urlize }}">
+        <div class="image cycle">
+          {{ with .Resources.ByType "image" }}
+            {{ range . }}
+              <img src="{{ .RelPermalink }}" />
+            {{ end }}
+          {{ end }}
+        </div>
+        {{- if .Params.shorttitle -}}
+          <h2 class="shorttitle">{{ .Params.shorttitle }}</h2>
+          <h2 class="longtitle">{{ .Title }}</h2>
+        {{- else -}}
+          <h2>{{ .Title }}</h2>
+        {{- end -}}
+        <h3>{{ .Summary }}</h3>
+        <a href="{{ .RelPermalink }}" class="opentext">
+          read more
+        </a>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </li>
+    {{- end -}}
+  </ul>
+</section>
+
+<div class="fix"></div>
+
+{{ partial "foot.html" . }}

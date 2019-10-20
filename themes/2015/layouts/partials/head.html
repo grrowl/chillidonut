@@ -1,0 +1,38 @@
+{{- $title := ( .Title ) -}}
+{{- $siteTitle := ( .Site.Title ) -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {{- if .IsHome -}}
+	<title>{{ $siteTitle }}</title>
+	{{- else -}}
+	<title>{{ $title }} - {{ $siteTitle }}</title>
+  {{- end -}}
+
+	{{- if isset .Site.Params "favicon" -}}
+	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
+  {{- end -}}
+
+	{{ with .OutputFormats.Get "rss" -}}
+	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css" rel="stylesheet" type="text/css" />
+
+	{{ $sass := resources.Get "css/main.scss" }}
+	{{ $style := $sass | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
+
+	{{ $plugins := resources.Get "js/jquery-2.1.0.min.js" }}
+	{{ $global := resources.Get "js/script.js" }}
+	{{ $js := slice $plugins $global | resources.Concat "js/bundle.js" | resources.Minify }}
+	<script src="{{ $js.Permalink }}"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
