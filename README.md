@@ -5,13 +5,11 @@ welcome to the public repository of my portfolio/site
 ## code
 
 It's been variously prodded at over the past couple of years. Compatible to
-IE 9, maybe earlier. Powered by jQuery, built by Jekyll.
+IE 9, maybe earlier. Powered by jQuery, built by ~Jekyll~ hugo.
 
 ## build
 
-Built with jekyll, so generating a fresh version is as easy as: `jekyll build`
-
-Install dependencies with `bundle && npm install`, requires ruby 2.2+
+Install hugo, run hugo, get website.
 
 ## css slideshow notes:
 

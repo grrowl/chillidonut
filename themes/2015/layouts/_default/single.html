@@ -1,0 +1,21 @@
+{{ partial "head.html" . }}
+
+{{ partial "header.html" . }}
+
+<article>
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <h3>{{ .Summary }}</h3>
+    <div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+
+    {{ .Content }}
+
+    {{ with .Resources.ByType "image" }}
+      {{ range . }}
+        <img src="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+</div>
+</article>
+
+{{ partial "foot.html" . }}
