@@ -9,7 +9,7 @@ steps:
 - name: hugo
   image: monachus/hugo:v0.58.3
   commands:
-  - hugo
+  - hugo --gc --minify
 - name: upload
   image: plugins/gcs
   settings:
