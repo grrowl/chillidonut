@@ -6,11 +6,10 @@ trigger:
   - master
 
 steps:
-- name: build
-  image: plugins/hugo
-  settings:
-    hugo_version: 0.58
-    validate: true
+- name: hugo
+  image: monachus/hugo:v0.58.3
+  commands:
+  - hugo
 - name: upload
   image: plugins/gcs
   settings:
