@@ -1,0 +1,22 @@
+kind: pipeline
+name: deploy
+
+trigger:
+  branch:
+  - master
+
+steps:
+- name: build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.58
+    validate: true
+- name: upload
+  image: plugins/gcs
+  settings:
+    source: public/
+    target: chillidonut.com/
+    gzip: js,css,html
+    cache_control: public,max-age=3600
+    token:
+      from_secret: deploy-token
