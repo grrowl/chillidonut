@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "chillidonut.com"
 theme = "2015"
 
-copyright = "© 2019"
+uglyURLs = true
 
 # Enable syntax highlighting.
 pygmentsstyle = "vs"
