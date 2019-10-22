@@ -16,14 +16,17 @@ pygmentscodefencesguesssyntax = true
 googleAnalytics = "UA-602554-1"
 
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
-paginate = 4
+paginate = 20
 
 [params]
   # Blog subtitle which appears below blog title. Supports markdown.
   subtitle = "I love making awesome internet and have heaps of fun doing it."
   # Content types which are included in home page recent posts list.
   mainSections = ["page", "posts", "zelda"]
+  # heading on the home page
   homeHeader = "Recent works"
+  # date format
+  dateFormat = "Jan 2, 2006"
   # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
   # favicon = "icons/myicon.png"
   # Switch to dark mode or auto detect mode from OS (Optional).
