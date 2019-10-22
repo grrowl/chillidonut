@@ -1,3 +1,9 @@
 [submodule "themes/ezhil"]
 	path = themes/ezhil
 	url = https://github.com/vividvilla/ezhil.git
+[submodule "themes/feather/layouts/partials"]
+	path = themes/feather/layouts/partials
+	url = https://github.com/feathericons/feather.git
+[submodule "themes/2019"]
+	path = themes/2019
+	url = ssh://git@git.chillidonut.com:2222/grrowl/hugo-2019.git
