@@ -35,6 +35,10 @@ paginate = 20
   # custom font
   font = "https://cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css"
 
+[imaging]
+resampleFilter = "Lanczos"
+quality = 82
+
 # Main menu which appears below site header.
 # [[menu.main]]
 # name = "Home"
