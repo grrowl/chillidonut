@@ -11,23 +11,6 @@ IE 9, maybe earlier. Powered by jQuery, built by ~Jekyll~ hugo.
 
 Install hugo, run hugo, get website.
 
-## css slideshow notes:
-
-```
-4 slides @ 5 seconds each = 20s duration
-
-base:  0s  --> in 0-1, out 5-6, nothing -20
-
-0s  0%    0
-1s  5%    1
-5s  25%   1
-6s  30%   0
-20s 100%  0
-```
-
-If there's not enough slides, it'll "hang" on the first slide (which never fades)
-before repeating
-
 ## license
 
 MIT. Learn what you can, reuse and improve upon it.

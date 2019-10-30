@@ -1,7 +1,9 @@
 baseURL = "https://chillidonut.com/"
 languageCode = "en-us"
-title = "chillidonut.com"
-theme = "2015"
+title = "chillidonut"
+# theme = ["ezhil", "2015"]
+# theme = ["2019", "2015", "feather"]
+theme = ["2019", "feather"]
 
 uglyURLs = true
 
@@ -12,59 +14,73 @@ pygmentscodefencesguesssyntax = true
 
 # Your Google analytics code.
 googleAnalytics = "UA-602554-1"
-# Your Disqus sortname.
-# disqusShortname = "localhost"
 
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
-paginate = 10
+paginate = 20
 
 [params]
   # Blog subtitle which appears below blog title. Supports markdown.
   subtitle = "I love making awesome internet and have heaps of fun doing it."
   # Content types which are included in home page recent posts list.
-  mainSections = ["posts"]
-  # Content types which are excludes Disqus comments.
-  disableDisqusTypes = ["page"]
-  # If social media links are enabled then enable this to fetch icons from CDN instead of hosted on your site.
-  featherIconsCDN = false
+  mainSections = ["page", "posts"]
+  # heading on the home page
+  homeHeader = "Recent works"
+  # date format
+  dateFormat = "Jan 2006"
   # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
-  favicon = "icons/myicon.png"
+  # favicon = "icons/myicon.png"
   # Switch to dark mode or auto detect mode from OS (Optional).
   # "dark" will set mode to dark and "auto" will switch to dark mode if OS is in dark mode.
-  mode = "auto" # "dark" or "auto"
+  mode = "auto"
+  # custom font
+  font = "https://cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css"
+
+[imaging]
+resampleFilter = "Lanczos"
+quality = 82
 
 # Main menu which appears below site header.
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+# [[menu.main]]
+# name = "Home"
+# url = "/"
+# weight = 1
 
-[[menu.main]]
-name = "All posts"
-url = "/posts"
-weight = 2
+# [[menu.main]]
+# name = "All posts"
+# url = "/posts"
+# weight = 2
 
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 3
+# [[menu.main]]
+# name = "About"
+# url = "/about"
+# weight = 3
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
+# [[menu.main]]
+# name = "Tags"
+# url = "/tags"
+# weight = 4
 
 # Social media links which shows up on site header.
 # Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
 [[params.social]]
-name = "Github"
+name = "get in touch"
+icon = "send"
+url = "mailto:tom@chillidonut.com"
+
+[[params.social]]
+name = "github"
 icon = "github"
 url = "https://github.com/grrowl"
 
 [[params.social]]
-name = "Twitter"
+name = "twitter"
 icon = "twitter"
 url = "https://twitter.com/grrowl"
+
+[[params.social]]
+name = "curriculum vitae"
+icon = "book"
+url = "/resume.html"
 
 # Enable tags.
 # [taxonomies]
