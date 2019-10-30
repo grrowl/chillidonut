@@ -1,6 +1,3 @@
-[submodule "themes/ezhil"]
-	path = themes/ezhil
-	url = https://github.com/vividvilla/ezhil.git
 [submodule "themes/feather/layouts/partials"]
 	path = themes/feather/layouts/partials
 	url = https://github.com/feathericons/feather.git

@@ -1,6 +1,3 @@
-kind: pipeline
-name: deploy
-
 clone:
   git:
     image: plugins/git
@@ -8,6 +5,9 @@ clone:
     submodule_update_remote: true
     submodule_override:
       themes/2019: http://git.chillidonut.com/grrowl/hugo-2019.git
+
+kind: pipeline
+name: deploy
 
 trigger:
   branch:
