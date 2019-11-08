@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "chillidonut"
 # theme = ["ezhil", "2015"]
 # theme = ["2019", "2015", "feather"]
-theme = ["2019", "feather"]
+theme = ["2019", "feather", "hugo-video"]
 
 uglyURLs = true
 
@@ -32,6 +32,9 @@ paginate = 20
   # favicon = "icons/myicon.png"
   # custom font
   font = "https://cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css"
+
+[blackfriday]
+hrefTargetBlank = true
 
 [imaging]
 resampleFilter = "Lanczos"
