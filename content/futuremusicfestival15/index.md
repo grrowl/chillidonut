@@ -1,6 +1,6 @@
 ---
-title: Future Music Festival '15
-shorttitle: FMF '15
+title: Future Music Festival 2015
+shorttitle: Future Music Festival
 client: Future Music
 collaborator: <a href="https://mushroomcreative.com/" target="_blank">Mushroom Creative</a>
 date: "2014-09-06"
@@ -14,4 +14,3 @@ Mushroom creative contacted me about implementing the visual design for the high
 [View archived site](https://web.archive.org/web/20141215182340/http://www.futuremusicfestival.com.au/2015)
 
 {{% video src="future-video" autoplay="true" loop="true" muted="true" %}}
-
