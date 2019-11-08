@@ -1,6 +1,6 @@
 ---
 title: Sugar Mountain Festival '15
-shorttitle:  Sugar Mountain
+shorttitle: Sugar Mountain
 client: Festival
 collaborator: <a href="https://mushroomcreative.com/" target="_blank">Mushroom Creative</a>
 date: "2014-10-15"
