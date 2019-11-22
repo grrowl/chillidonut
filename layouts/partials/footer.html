@@ -1,0 +1,37 @@
+{{ template "_internal/google_analytics_async.html" . }}
+
+<script>
+function loadScript(url){
+	return new Promise(function(resolve, reject){
+		var head = document.getElementsByTagName('head')[0]
+		var script = document.createElement('script')
+		script.type = 'text/javascript'
+		script.addEventListener('load', function(){
+			this.removeEventListener('load', arguments.callee)
+			resolve(script)
+		})
+		script.src = url
+		head.appendChild(script)
+	})
+}
+
+function initSite() {
+  Promise.all([
+    loadScript("https://unpkg.com/@swup/slide-theme@latest/dist/SwupSlideTheme.min.js"),
+    loadScript("https://unpkg.com/@swup/ga-plugin@latest/dist/SwupGaPlugin.min.js"),
+    loadScript("https://unpkg.com/@swup/scroll-plugin@latest/dist/SwupScrollPlugin.min.js"),
+    loadScript("https://unpkg.com/swup@latest/dist/swup.min.js"),
+  ]).then(function initTransitions () {
+    const swup = new Swup({
+      containers: ['section', 'article'],
+      plugins: [
+        new SwupSlideTheme({
+          mainElement: 'article'
+        }),
+        new SwupGaPlugin(),
+        new SwupScrollPlugin()
+      ]
+    });
+  })
+}
+</script>

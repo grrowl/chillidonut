@@ -4,7 +4,9 @@
 <body>
   <section>
     {{ partial "header.html" . }}
+  </section>
 
+  <article>
     {{ .Content }}
 
     <div class="recent-posts section">
@@ -16,8 +18,8 @@
       {{ template "partials/paginator.html" . }}
       </div>
     </div>
-  </section>
-  <article></article>
+  </article>
+
   {{ partial "footer.html" . }}
 </body>
 </html>
