@@ -1,18 +1,23 @@
 {{ template "_internal/google_analytics_async.html" . }}
 
 <script>
-function loadScript(url){
-	return new Promise(function(resolve, reject){
-		var head = document.getElementsByTagName('head')[0]
-		var script = document.createElement('script')
-		script.type = 'text/javascript'
-		script.addEventListener('load', function(){
-			this.removeEventListener('load', arguments.callee)
-			resolve(script)
-		})
-		script.src = url
-		head.appendChild(script)
-	})
+function loadScript(url) {
+  return new Promise(function(resolve, reject) {
+    let element = document.createElement("script");
+    element.src = url;
+    element.async = true;
+
+    element.onload = function() {
+      resolve(url);
+    };
+    element.onerror = function() {
+      reject(url);
+    };
+
+    onReady(function appendScript() {
+      document.body.appendChild(element);
+    })
+  });
 }
 
 function initSite() {
