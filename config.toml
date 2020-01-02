@@ -26,7 +26,7 @@ paginate = 20
   excludedTypes = [""]
   # heading on the home page
   homeHeader = "Selected works"
-  # date format
+  # date format - use the reference time Mon Jan 2 15:04:05 MST 2006
   dateFormat = "Jan 2006"
   # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
   # favicon = "icons/myicon.png"
@@ -42,6 +42,11 @@ quality = 82
 
 # Social media links which shows up on site header.
 # Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
+[[params.social]]
+name = "about me, guides, articles"
+icon = "user-plus"
+url = "https://tommckenzie.dev"
+
 [[params.social]]
 name = "get in touch"
 icon = "send"
