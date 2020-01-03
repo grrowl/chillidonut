@@ -1,4 +1,4 @@
 ---
 title: chillidonut
-description: The personally professional portfolio of Tom McKenzie
+summary: The personally professional portfolio of Tom McKenzie
 ---
