@@ -4,6 +4,7 @@ shorttitle: Future Music Festival
 client: Future Music
 collaborator: <a href="https://mushroomcreative.com/" target="_blank">Mushroom Creative</a>
 date: "2014-09-06"
+publishDate: "2019-10-23"
 subtitle: |
   Wordpress development, HTML/CSS, content delivery infrastructure
 ---

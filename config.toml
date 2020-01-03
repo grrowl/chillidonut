@@ -32,6 +32,23 @@ paginate = 20
   # favicon = "icons/myicon.png"
   # custom font
   font = "https://cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css"
+  images = ["card.jpg"]
+
+[markup]
+defaultMarkdownHandler = "blackfriday"
+
+# [markup.goldmark.renderer]
+# unsafe = true
+
+# [markup.goldmark.extensions]
+# definitionList = true
+# strikethrough = true
+# table = true
+# linkify = true
+# footnote = true
+
+# [markup.goldmark.parser]
+# withAttribute = true
 
 [blackfriday]
 hrefTargetBlank = true

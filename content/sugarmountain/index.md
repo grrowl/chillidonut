@@ -4,6 +4,7 @@ shorttitle: Sugar Mountain
 client: Festival
 collaborator: <a href="https://mushroomcreative.com/" target="_blank">Mushroom Creative</a>
 date: "2014-10-15"
+publishDate: "2019-10-23"
 subtitle: |
   Wordpress development, HTML/CSS, content delivery infrastructure
 ---

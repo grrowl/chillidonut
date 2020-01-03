@@ -2,6 +2,7 @@
 title: ActivePipe
 client: Marketing Platform
 date: "2016-09-01"
+publishDate: "2019-11-08"
 subtitle: |
   React, Redux, Front-end toolchains, Kubernetes, auto-scaling infrastructure.
 ---

@@ -3,6 +3,7 @@ title: Paddl Jobs
 shorttitle: Paddl
 client: CareerLounge
 date: "2015-06-01"
+publishDate: "2019-10-23"
 subtitle: |
   Server-side rendered React, Ops/Infrastructure, Ruby on Rails
 ---
