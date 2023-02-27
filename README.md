@@ -13,7 +13,7 @@ IE 9, maybe earlier. Powered by jQuery, built by ~Jekyll~ hugo.
 
 Install hugo, run hugo, get website.
 
-`hugo && hugo deploy`
+`hugo && hugo deploy --maxDeletes 0`
 
 ## videos
 
