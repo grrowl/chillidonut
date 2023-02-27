@@ -1,7 +1,8 @@
 ---
 title: Covidence
 client: Academic Research
-date: "2019-12-01"
+startDate: "2019-05-01"
+date: "2019-12-25"
 publishDate: "2023-02-26"
 subtitle: |
   React, Redux, Front-end toolchains, Ruby on Rails, technical uplift.

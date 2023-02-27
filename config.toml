@@ -98,5 +98,5 @@ name = "chillidonut.com"
 URL = "gs://chillidonut.com"
 
 # some files only stored serverside
-exclude = "{2015,2016,cached,ummss,thefunparty,junk,mork}"
+exclude = "{2015,2016,cached,ummss,thefunparty,junk,mork}/**"
 

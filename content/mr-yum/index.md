@@ -1,7 +1,8 @@
 ---
 title: Mr Yum
 client: Hospitality Platform
-date: "2023-02-01"
+startDate: "2020-01-01"
+date: "2023-02-27"
 publishDate: "2023-02-27"
 subtitle: |
   React, Graphql, Typescript, Mobile Ordering, Growth and Leadership
