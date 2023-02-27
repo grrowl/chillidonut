@@ -18,7 +18,7 @@ function loadScript(url) {
 };
 
 
-Promise.all([
+/* Promise.all([
   loadScript("https://unpkg.com/@swup/slide-theme@latest/dist/SwupSlideTheme.min.js"),
   loadScript("https://unpkg.com/@swup/ga-plugin@latest/dist/SwupGaPlugin.min.js"),
   loadScript("https://unpkg.com/@swup/scroll-plugin@latest/dist/SwupScrollPlugin.min.js"),
@@ -34,7 +34,7 @@ Promise.all([
       new SwupScrollPlugin()
     ]
   });
-})
+}) */
 
 ;(function(f, a, t, h, o, m){
   a[h]=a[h]||function(){
