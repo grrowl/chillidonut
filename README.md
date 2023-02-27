@@ -9,6 +9,8 @@ IE 9, maybe earlier. Powered by jQuery, built by ~Jekyll~ hugo.
 
 ## build
 
+`git submodule init && git submodule update`
+
 Install hugo, run hugo, get website.
 
 ## videos

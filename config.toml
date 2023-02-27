@@ -35,10 +35,10 @@ paginate = 20
   images = ["card.jpg"]
 
 [markup]
-defaultMarkdownHandler = "blackfriday"
+defaultMarkdownHandler = "goldmark"
 
-# [markup.goldmark.renderer]
-# unsafe = true
+[markup.goldmark.renderer]
+unsafe = true
 
 # [markup.goldmark.extensions]
 # definitionList = true
@@ -49,9 +49,6 @@ defaultMarkdownHandler = "blackfriday"
 
 # [markup.goldmark.parser]
 # withAttribute = true
-
-[blackfriday]
-hrefTargetBlank = true
 
 [imaging]
 resampleFilter = "Lanczos"
