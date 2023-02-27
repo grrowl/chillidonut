@@ -13,6 +13,8 @@ IE 9, maybe earlier. Powered by jQuery, built by ~Jekyll~ hugo.
 
 Install hugo, run hugo, get website.
 
+`hugo && hugo deploy`
+
 ## videos
 
 converted to mp4 with ffmpeg:

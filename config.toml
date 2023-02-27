@@ -89,3 +89,14 @@ url = "#toggleDark"
 # Enable tags.
 # [taxonomies]
 #   tag = "tags"
+
+[deployment]
+order = [".jpeg$", ".jpg$", ".gif$"]
+
+[[deployment.targets]]
+name = "chillidonut.com"
+URL = "gs://chillidonut.com"
+
+# some files only stored serverside
+exclude = "{2015,2016,cached,ummss,thefunparty,junk,mork}"
+
