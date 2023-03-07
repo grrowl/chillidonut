@@ -5,7 +5,7 @@ startDate: "2020-01-01"
 date: "2023-02-27"
 publishDate: "2023-02-27"
 subtitle: |
-  React, Graphql, Typescript, Mobile Ordering, Growth and Leadership
+  React, Typescript, GraphQL, Mobile Ordering, Growth and Leadership
 ---
 
 ## Building a World-Class Dining Experience

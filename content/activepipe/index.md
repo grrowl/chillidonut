@@ -12,7 +12,7 @@ Initially brought on as a contractor to break ground on ActivePipe's front-end s
 
 During my time I also developed and managed the foundational design system, and helped migrate our single-machine server instances to an auto-scaling Kubernetes infrastructure. This paved the way to breaking up our monolithic Javascript stack into distinct modules for design system, email editor/renderer, and email rendering service, which decreased our server load during peak sending periods and increased reliability. During this time we also migrated the Javascript application to Typescript.
 
-It was a special opportunity to help guide the development of this product over several years, set a standard within the team, and take a major feature from two-week proof-of-concept through to a business-critical Node.js service running across a fleet of servers sending millions of emails daily.
+It was a special opportunity to help guide the development of this product over years, set a high standard within the team, and introduce a two-week proof-of-concept through to a business-critical service at the core of the company running on a fleet of servers sending millions of emails daily.
 
 <!-- {{ % instagram Bg2PdKaBmzp hidecaption % }} -->
 

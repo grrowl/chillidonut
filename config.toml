@@ -31,7 +31,7 @@ paginate = 20
   # Specify favicon (icons/i.png maps to static/icons/i.png). No favicon if not defined.
   # favicon = "icons/myicon.png"
   # custom font
-  font = "https://cloud.webtype.com/css/72c358aa-8384-4692-b9ad-501d32afb223.css"
+  font = "//fastly-cloud.typenetwork.com/projects/7071/fontface.css?6406cf3a"
   images = ["card.jpg"]
 
 [markup]

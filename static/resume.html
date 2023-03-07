@@ -49,6 +49,16 @@
       margin-left: 0;
       padding-left: 1em;
     }
+    @media print {
+      a::after{
+        content: " «" attr(href) "»";
+        font-size: 0.85rem;
+        margin-left: 0.3rem;
+        text-decoration: none;
+        display: inline-block;
+        color: initial;
+      }
+    }
   </style>
   <link href="//fonts.googleapis.com/css?family=Poly:400italic,400" rel="stylesheet" type="text/css">
 </head>
@@ -57,11 +67,11 @@
   <h1>Tom McKenzie</h1>
   <dl>
     <dt>phone</dt>
-      <dd><a href="tel:+61402677161">0402 677 161</a></dd>
+      <dd><a href="tel:+61402677161">0402 677 161</a> / <a href="tel:+15126330124">(512) 633 0124</a></dd>
     <dt>email</dt>
       <dd><a href="mailto:tom@chillidonut.com">tom@chillidonut.com</a></dd>
     <dt>web</dt>
-      <dd><a href="https://chillidonut.com">chillidonut.com</a></dd>
+      <dd><a href="https://tommckenzie.dev">tommckenzie.dev</a></dd>
     <dt>location</dt>
       <dd>Melbourne, Australia</dd>
   </dl>
@@ -70,10 +80,14 @@
 <section>
   <h2>Profile</h2>
   <p>
-    Tom is an award-winning full-stack developer with 9 years of professional experience in digital production and a passionate involvement prior.
-    Having worked with clients such as Nintendo, VicRoads, Specsavers, SportsBet, and Mushroom Group, as well as a number of fledging and established start-ups, he has proven a broad and flexible skillset in areas ranging from front-end development, full-stack application architecture, web application performance tuning, optimising client- and server-side app rendering and delivery, app usability, and system and infrastructure operations and orchestration.
+    An award-winning full-stack developer with 12+ years of professional experience in digital production, Tom has worked with high-profile clients such as Mr Yum, Nintendo, Mushroom Group, VicRoads, SportsBet, Specsavers, and multiple start-ups. Adept in full-stack development, scalable cloud architecture, usability-first design, and engineering and product management, Tom has successfully delivered numerous projects with a keen eye for "right-sized" delivery and process.
+  </p>
+
+  <p>
+    As the first technical non-founder at Mr Yum, he was instrumental in the company's growth to a record-breaking Series A through to ongoing international success.
     He holds a Bachelor of Information Technology (Computer Science and Software Development) from Deakin University and is a regular contributor to open-source projects.
   </p>
+
   <!--
     Projects with accepted contributions (as of March 2020) include:
     - uber/baseweb
@@ -88,6 +102,7 @@
     - guigrpa/timm (TypeScript definitions)
     - tomchentw/react-google-maps (bug fixes)
     - zalmoxisus/redux-devtools-extension (Webpack 3)
+
     As of 1 Feb 2015:
     - careerlounge/isomorphic-react-starter-kit (open-sourced while at careerlounge)
     - rackt/react-router
@@ -96,15 +111,26 @@
     - akiran/react-slick (bunch of bugfixes, used on comet.is)
     - trevorreeves/superagent-legacyIESupport
     - odysseyscience/react-router-proxy-loader
+
     past:
     - espen/balder (added facebook oauth provider)
   -->
 </section>
 
+<!--
 <section>
   <h2>Objective</h2>
   <h4>Primary Focus</h4>
   <ul>
+    <li>Applying a unique combination of technical expertise and leadership skills, in an fast-paced, high-growth environment.</li>
+
+    <li>Flexing a broad range of skills from full-stack application development, design, commercial strategy .. ?</li>
+
+    <li>Targeting the next generation of technology
+    <li>Directly contributing in a fast-paced, high-growth environment.</li>
+
+
+
     <li>Web application development, particularly in current and next generation technology.</li>
     <li>
       User interface design and implementation, with focus on novel user experiences and highly scalable design systems.
@@ -116,10 +142,13 @@
 
   <h4>Skills</h4>
   <ul>
-    <li>Expert proficiency in Javascript, HTML, and CSS. High proficiency in Typescript.</li>
-    <li>Proficient in Ruby, PHP, SQL. Intermediate knowledge of C#, Objective-C.</li>
-    <li>Proficient in high-level application design geared toward performance, scalability, and maintainability.</li>
-    <li>Deep understanding of React and ecosystem libaries and concepts such as Redux, GraphQL libaries, and Webpack/Babel tooling. Well versed in structuring composable front-end applications.</li>
+    <li>Unique brand of empathetic engineering leadership.</li>
+
+    <li>Expert proficiency in Javascript, HTML, CSS. High proficiency in Typescript.</li>
+    <li>Proficient in Ruby, PHP, SQL, Python. Intermediate knowledge of C#, Objective-C.</li>
+    <li>Proficient in high-level technical architecture geared toward performance and horizontal scalability.</li>
+
+    <li>Deep understanding of React and ecosystem libaries and concepts such as Redux, GraphQL libaries, and Webpack/Babel tooling.</li>
     <li>Passionate about client-side performance, including time to initial render, request optimisation, and perceived performance.</li>
     <li>Working knowledge of a wide range of mainstream products and frameworks, including Bootstrap, Wordpress, Magento, Rails. Quick to adapt to new frameworks and paradigms.</li>
     <li>Proficient in test driven development (TDD), as well as unit testing and automated browser testing.</li>
@@ -128,30 +157,38 @@
     <li>Passionate about contributing back to the open-source community.</li>
   </ul>
 </section>
-
-<section>
-  <h2>Formal Education</h2>
-  <h3>
-    Bachelor of Information Technology <em>(Computer Science and Software Development)</em>
-  </h3>
-  <p>
-    2007 &mdash; 2010
-  </p>
-  <ul>
-    <li>Acquired advanced understanding of computer systems and low-level software development principles including security, concurrency, databases, and optimization.</li>
-    <li>Learned Object-Oriented Programming principles and the software development process and modern methodologies, and development of C# desktop and ASP-based applications in the .Net framework</li>
-    <li>Knowledge of management principles and teamwork skills.</li>
-  </ul>
-</section>
+-->
 
 <section>
   <h2>Employment History</h2>
 
   <h3><a href="https://mryum.com/">Mr Yum</a></h3>
-  <h4>January 2020 &mdash; Current</h4>
+  <h4>January 2020 &mdash; February 2023</h4>
+
   <dl>
+    <dt style="visibility: hidden">Date</dt>
+      <dd><h5 style="margin: 0">April 2022 &mdash; February 2023</h5></dd>
+
     <dt>Role</dt>
-      <dd>Engineering Lead</dd>
+      <dd>VP Product/Engineering, Strategic Projects</dd>
+
+    <dt>Responsibilities</dt>
+      <dd>
+        <ul>
+          <li>Scope strategic projects related to third-party vendors, especially payment and key technical integration partners</li>
+          <li>Stand up a new cross-functional team in Austin, USA, in tandem with Co-founder + Head of USA</li>
+          <li>Research and scope product work for regional success in both USA and UK regions</li>
+          <li>Work with product leadership on scoping, prioritisation, and operational processes</li>
+        </ul>
+      </dd>
+  </dl>
+
+  <dl>
+    <dt style="visibility: hidden">Date</dt>
+      <dd><h5 style="margin: 0">January 2020 &mdash; April 2022</h5></dd>
+
+    <dt>Role</dt>
+      <dd>Director of Engineering</dd>
 
     <dt>Technology</dt>
       <dd>
@@ -165,9 +202,9 @@
     <dt>Responsibilities</dt>
       <dd>
         <ul>
-          <li>Working closely with leadership team to assess priorities and establish timelines</li>
-          <li>Leading and growing remote-first engineering team, setting engineering practices (project and process management)</li>
-          <li>A whole lot of individual contribution scaling the product from MVP to formidible featureful product</li>
+          <li>A whole lot of individual contribution scaling the product from MVP to formidible world-class product</li>
+          <li>Working closely with founders and leadership to define and grow product over time</li>
+          <li>Leading and growing a remote-first engineering team</li>
         </ul>
       </dd>
   </dl>
@@ -181,7 +218,7 @@
     <dt>Technology</dt>
       <dd>
         <ul>
-          <li>React, Typescript, modern build toolchains</li>
+          <li>React, Typescript, GraphQL, modern build toolchains</li>
         </ul>
       </dd>
 
@@ -333,7 +370,6 @@
 
   <h3>
     <a href="http://www.accounts4life.com.au">Accounts4Life</a>
-    <small>- www.accounts4life.com.au</small>
   </h3>
   <h4>Accounts4Life - at <a href="http://www.wavedigital.com.au/">Wave Digital</a>, September 2013</h4>
   <dl>
@@ -380,7 +416,6 @@
 
   <h3>
     <a href="http://www.domynawzgorzu.pl">Domy na Wzgorzu</a>
-    <small>- www.domynawzgorzu.pl</small>
   </h3>
   <h4>for Domy na Wzgorzu, June 2011</h4>
   <dl>
@@ -450,7 +485,6 @@
 
   <h3>
     <a href="http://www.nintendo.com.au/gamesites/mariokartwii/">Mario Kart Wii</a>
-    <small>- www.nintendo.com.au/gamesites/mariokartwii/</small>
   </h3>
   <h4>Nintendo Australia - at <a href="http://www.blissmedia.com.au/">Blissmedia</a>, May 2011</h4>
   <dl>
@@ -476,6 +510,21 @@
   </dl>
 -->
 
+</section>
+
+<section>
+  <h2>Formal Education</h2>
+  <h3>
+    Bachelor of Information Technology <em>(Computer Science and Software Development)</em>
+  </h3>
+  <p>
+    2007 &mdash; 2010
+  </p>
+  <ul>
+    <li>Acquired advanced understanding of computer systems and low-level software development principles including security, concurrency, databases, and optimization.</li>
+    <li>Learned Object-Oriented Programming principles and the software development process and modern methodologies, and development of C# desktop and ASP-based applications in the .Net framework</li>
+    <li>Knowledge of management principles and teamwork skills.</li>
+  </ul>
 </section>
 
 </body>
