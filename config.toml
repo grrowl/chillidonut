@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "chillidonut"
 # theme = ["ezhil", "2015"]
 # theme = ["2019", "2015", "feather"]
-theme = ["2019", "feather", "hugo-video-local"]
+theme = ["2019", "hugo-video-local"]
 
 uglyURLs = true
 
@@ -12,8 +12,7 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-# Your Google analytics code.
-googleAnalytics = "UA-602554-1"
+# analytics: self-hosted via visitors.chillidonut.com (see layouts/partials/footer.html)
 
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
 paginate = 20
@@ -99,4 +98,9 @@ URL = "gs://chillidonut.com"
 
 # some files only stored serverside
 exclude = "{2015,2016,cached,ummss,thefunparty,junk,mork}/**"
+
+# Allow raw .html content files (e.g. content/zelda/index.html).
+# Hugo 0.160+ denies text/html content by default; restore prior behaviour.
+[security]
+  allowContent = ['.*']
 

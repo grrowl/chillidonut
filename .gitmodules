@@ -1,9 +1,7 @@
-[submodule "themes/feather/layouts/partials"]
-	path = themes/feather/layouts/partials
-	url = https://github.com/feathericons/feather.git
 [submodule "themes/2019"]
 	path = themes/2019
 	url = ssh://git@git.chillidonut.com:2222/grrowl/hugo-2019.git
+	branch = chillidonut.com
 [submodule "themes/hugo-video"]
 	path = themes/hugo-video
 	url = https://github.com/martignoni/hugo-video.git
