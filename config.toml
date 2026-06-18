@@ -96,8 +96,9 @@ order = [".jpeg$", ".jpg$", ".gif$"]
 name = "chillidonut.com"
 URL = "gs://chillidonut.com"
 
-# some files only stored serverside
-exclude = "{2015,2016,cached,ummss,thefunparty,junk,mork}/**"
+# Server-only paths kept out of the deploy diff: never uploaded, never deleted.
+# Legacy site folders, client work, and loose root files that don't come from Hugo.
+exclude = "{2015/**,2016/**,cached/**,ummss/**,thefunparty/**,junk/**,mork/**,clients/**,assets/**,deploy.sh,README,resume-text.txt}"
 
 # Allow raw .html content files (e.g. content/zelda/index.html).
 # Hugo 0.160+ denies text/html content by default; restore prior behaviour.
