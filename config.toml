@@ -97,8 +97,8 @@ name = "chillidonut.com"
 URL = "gs://chillidonut.com"
 
 # Server-only paths kept out of the deploy diff: never uploaded, never deleted.
-# Legacy site folders, client work, and loose root files that don't come from Hugo.
-exclude = "{2015/**,2016/**,cached/**,ummss/**,thefunparty/**,junk/**,mork/**,clients/**,assets/**,deploy.sh,README,resume-text.txt}"
+# Old site versions (2015/2016 + their assets) and the junk drawer — server-only, never deployed.
+exclude = "{2015/**,2016/**,assets/**,junk/**}"
 
 # Allow raw .html content files (e.g. content/zelda/index.html).
 # Hugo 0.160+ denies text/html content by default; restore prior behaviour.
