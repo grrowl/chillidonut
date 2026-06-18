@@ -39,18 +39,4 @@
   {{ errorf "No valid video file with filename %q found." $video_src }}
 {{ end }}
 
-<video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if .Get "autoplay" }}autoplay{{ end }} {{ if .Get "loop" }}loop{{ end }} {{ if .Get "muted" }}muted{{ end }} {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}class="html-video">
-  {{ with $video_webm }}
-    <source src="{{ $video_webm.RelPermalink }}" type="video/webm" }}>
-    {{ $video_dl = $video_webm }}
-  {{ end }}
-  {{ with $video_ogg }}
-    <source src="{{ $video_ogg.RelPermalink }}" type="video/ogg" }}>
-    {{ $video_dl = $video_ogg }}
-  {{ end }}
-  {{ with $video_mp4 }}
-    <source src="{{ $video_mp4.RelPermalink }}" type="video/mp4" }}>
-    {{ $video_dl = $video_mp4 }}
-  {{ end }}
-  <p>{{ i18n "videoUnsupported" $video_dl }}</p>
-</video>
+<video controls preload="auto" width="{{ or (.Get "width") $width }}" {{ if .Get "autoplay" }}autoplay{{ end }} {{ if .Get "loop" }}loop{{ end }} {{ if .Get "muted" }}muted{{ end }} {{ with $poster }}poster="{{ .RelPermalink }}"{{ end }}class="html-video">{{ with $video_webm }}<source src="{{ .RelPermalink }}" type="video/webm">{{ $video_dl = . }}{{ end }}{{ with $video_ogg }}<source src="{{ .RelPermalink }}" type="video/ogg">{{ $video_dl = . }}{{ end }}{{ with $video_mp4 }}<source src="{{ .RelPermalink }}" type="video/mp4">{{ $video_dl = . }}{{ end }}<p>{{ i18n "videoUnsupported" $video_dl }}</p></video>
