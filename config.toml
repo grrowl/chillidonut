@@ -39,7 +39,8 @@ paginate = 20
   [params.author]
     name = "Tom McKenzie"
     url = "https://tommckenzie.dev/"
-    jobTitle = "Web developer"
+    jobTitle = "Technical leader & hands-on engineer"
+    description = "Tom McKenzie is a hands-on technical leader, happiest at the frontier of the web - building end-to-end, from first steps to small teams and startups, through to scaling effective systems and healthy teams."
     sameAs = ["https://github.com/grrowl", "https://twitter.com/grrowl", "https://chillidonut.com/", "https://tommckenzie.dev/"]
 
 [markup]
