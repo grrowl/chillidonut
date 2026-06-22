@@ -33,6 +33,15 @@ paginate = 20
   font = "//fastly-cloud.typenetwork.com/projects/7071/fontface.css?6406cf3a"
   images = ["card.jpg"]
 
+  # Author identity for JSON-LD structured data (themes/2019 partials/schema.html).
+  # url + @id anchor the author at tommckenzie.dev so this site's author resolves
+  # to the same Person entity as tommckenzie.dev (cross-domain identity link).
+  [params.author]
+    name = "Tom McKenzie"
+    url = "https://tommckenzie.dev/"
+    jobTitle = "Web developer"
+    sameAs = ["https://github.com/grrowl", "https://twitter.com/grrowl", "https://chillidonut.com/", "https://tommckenzie.dev/"]
+
 [markup]
 defaultMarkdownHandler = "goldmark"
 
